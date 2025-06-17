@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DINO RAMPAGE - Epic Dinosaur Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <h1>DINO RAMPAGE</h1>
+            <div class="score-container">
+                <span>Score: </span>
+                <span id="score">0</span>
+            </div>
+            <div class="high-score-container">
+                <span>High Score: </span>
+                <span id="highScore">0</span>
+            </div>
+        </div>
+        
+        <div id="game-message" class="game-message">
+            Press Space or Click to Start!
+        </div>
+        
+        <div id="game-canvas-container">
+            <div id="game-world">
+                <div id="player" class="dinosaur"></div>
+                <div id="obstacle-container"></div>
+                <div id="ground"></div>
+                <div id="background"></div>
+                <div id="powerup-container"></div>
+            </div>
+        </div>
+        
+        <div class="game-controls">
+            <button id="jumpBtn">JUMP</button>
+            <button id="specialBtn">FIRE BREATH</button>
+            <button id="restartBtn">Restart</button>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html> 
