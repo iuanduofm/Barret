@@ -1,4 +1,4 @@
-# Patentability Rubric (1–10) and Scrap-Metal Concepts Scored at 7 and 8
+# Patentability Rubric (1–10) and Scrap-Metal Patent Concepts
 
 > This is a structured way to screen ideas. It is not a legal opinion. Any concept
 > that scores 5 or higher should go to a registered patent attorney or agent for a
@@ -332,3 +332,148 @@ same process reliably neutralizes those hazards too, which is far from certain.
    thermal de-oiling or de-coating of scrap.
 4. **File a provisional application before any pilot, vendor RFQ, or permit
    application.** An air permit filing is itself a public disclosure.
+
+---
+
+## Part 4 — The Flagship Concept (scores 9 on paper)
+
+### Title
+
+**Conductivity-Sensing Lifting Magnet: Detecting Copper in Ferrous Scrap While
+It Hangs From the Magnet**
+
+### The pitch
+
+Every ton of ferrous scrap in a yard, and every charge bucket at a mill, hangs
+from a lifting magnet at least once. **This invention makes the magnet report
+what it's holding.** It needs no sorting line, no conveyor, no extra floor space,
+and no change to how operators work.
+
+### The problem it solves
+
+Copper is the most costly contaminant in ferrous scrap, and it has been for
+decades:
+
+- **Copper can't be removed once it's in the melt.** Mills cap residual copper
+  and dilute it with costly low-residual material. They downgrade or reject
+  scrap that runs high.
+- **Much of it arrives inside things the magnet picks up.** Electric motors
+  ("meatballs"), alternators, starters, and transformer cores have steel bodies
+  that the magnet grabs, with copper windings inside. The magnet can't tell a
+  motor from a piece of plate.
+- **Motors are worth far more than ferrous scrap.** When they ride along in a
+  ferrous load, the yard sells copper at the steel price **and** hurts the load's
+  quality. That's a loss both ways.
+- **Today's fixes don't reach most of the tonnage.** Hand-pickers and
+  sensor-sorting lines work only on shredded material that travels on a
+  conveyor. Heavy melting, plate and structural, unprepared scrap, and mill
+  charge buckets never pass a sorting line. The magnet is the only
+  piece of equipment that handles all of it.
+
+### The key insight
+
+A lifting magnet's large DC field **magnetically saturates the steel it holds**.
+Saturated steel has a very low incremental permeability. To a small, fast AC or
+pulsed field added on top, the steel largely stops acting like a magnet and acts
+like an ordinary, fairly poor conductor.
+
+Copper is a much better conductor and isn't magnetic at all. It produces a
+strong, slowly decaying eddy-current response that stands out against the
+saturated steel. The magnet's own lifting field therefore **suppresses the
+background that would normally swamp a metal detector sitting on a pile of
+steel**. That is an unexpected result, and it anchors the non-obviousness
+argument (G3).
+
+### The invention
+
+1. **Sense.** A pulse-induction or multi-frequency eddy-current sensor array is
+   embedded in the magnet face, or sold as a retrofit ring or puck. It runs
+   while the magnet is energized and holding a load. It uses its own small
+   transmit/receive coils rather than the magnet's main coil, whose inductance
+   is too large to modulate quickly.
+2. **Classify.** Signal features are matched against a library of reference
+   signatures to classify each lift. The features are decay time constant,
+   response amplitude versus frequency, and spatial distribution across the
+   array. The classes are clean ferrous, copper-bearing item (motor,
+   alternator, wound part), aluminum-bearing item, and unknown.
+3. **Act.** The operator gets an alert in the cab, or the controller routes the
+   lift automatically: drop to the reject or recovery zone, or tap-release
+   (briefly drop the magnet current to shed loosely attached pieces).
+4. **Record.** Each lift is logged with its time, location, the magnet's
+   current-derived or load-cell mass, and its classification.
+5. **Roll up per load.** Per-lift results are added into a **load-level copper
+   estimate**. This supports a **certified low-copper shipment** document (it
+   connects to the Part 2 concept) and gives the yard evidence against mill
+   downgrade claims.
+
+### Draft claim structure
+
+- **Independent method claim (the genus):** while a lifting electromagnet holds
+  ferrous material, measure an electromagnetic response of the held material
+  that indicates the presence of a non-ferromagnetic conductor, and generate a
+  control or data output from it.
+- **Independent apparatus claim:** a lifting magnet, or a retrofit kit for one,
+  with a sensing coil array at the working face and a processor that
+  discriminates non-ferromagnetic conductive material while the magnet is
+  energized.
+- **Dependent claims:**
+  - (a) sensing timed to occur while the DC field saturates the held ferrous
+    material;
+  - (b) pulse-induction decay-time discrimination;
+  - (c) automatic routing or tap-release;
+  - (d) a per-load copper roll-up and certificate;
+  - (e) mill charge-bucket use, with the charge plan adjusted from the result;
+  - (f) estimating the lifted ferrous mass from the magnet's electrical
+    signature.
+
+### Gate-by-gate scoring
+
+| Gate | Result | Reasoning |
+|---|---|---|
+| G1 Eligible | ✅ Pass | A physical apparatus that senses physical material and changes what physically happens to it. |
+| G2 Novel | ✅ Pass *(to be confirmed by search)* | Known references include lifting magnets and magnet controllers, crane scales, eddy-current separators on conveyors, and hand-held and walk-through metal detectors. Sensing a **non-ferrous conductor in material held on an energized lifting magnet** is not expected in any single reference. |
+| G3 Non-obvious | ✅ Pass *(depends on the bench test)* | "Put a metal detector on the magnet" looks obvious, but the obvious version doesn't work. A metal detector next to tonnes of steel is swamped by the ferrous response. A skilled engineer would expect that and not try it, which is **teaching away**. The unexpected result is that the magnet's own saturating field suppresses the ferrous background. That is documentable, and it is what makes the combination work. |
+| G4 Enabled | ✅ Pass *(the gate to verify first)* | Pulse-induction and multi-frequency eddy-current electronics, ruggedized coils, and magnet controllers are all off-the-shelf. A specification with coil geometry, timing relative to the DC field, and the discrimination logic can be written today. A bench test with a motor, plate, and shred on an energized magnet turns "plausible" into "demonstrated." |
+| G5 Non-trivial design-around | ✅ Pass | Follows from G7 below. |
+| G6 Detectable | ✅ Pass | Magnets are visible equipment sold by a small number of vendors. A "copper-detecting magnet" or retrofit kit would be marketed, and its brochure is the evidence. The certified low-copper shipments are public claims too. |
+| G7 No viable design-around | ✅ Pass | The genus claim covers **any** electromagnetic sensing of the held load while it is lifted. The remaining alternatives: **(1) Hand-picking or sorting lines.** Shredded material only, a separate capital project, and they miss the large share of tonnage that never reaches a conveyor. **(2) Cameras on the crane.** Copper windings sit inside steel housings, so a camera sees a steel lump and can't tell a motor from a gear case with any reliability. **(3) X-ray.** Can't be done safely or practically on a swinging crane in an open yard. **(4) Sense the pile before lifting.** A detector on top of a steel pile runs into the same ferrous background problem this invention solves. No alternative delivers 85% or more of the benefit across all grades at comparable cost. |
+| G8 Pioneering / genus-level | ✅ Pass | **(a) Long-felt need:** copper in steel scrap has been a recognized industry problem for decades, and pickers, sensor sorters, cryogenic processing, and melt-stage research have only partly solved it. **(b) Cross-industry:** the same claim works unchanged in scrap recycling, **steelmaking** (mill charge buckets), **waste-to-energy** (magnets recovering ferrous from incinerator ash), and **demolition** (magnets on excavators). |
+| G9 Indispensable | ❌ **Fail** | There is no standard adoption, market share, or copying yet. By the rubric's rule this can't be scored before launch. |
+
+**Score: 1 + 8 gates passed = 9.**
+
+### Path to 10
+
+The score reaches 10 if magnet-verified copper data becomes what buyers **require**:
+- mills write "magnet-verified Cu" into purchase specifications;
+- a scrap specification body references the method; or
+- the major magnet vendors license it because customers won't buy magnets
+  without it.
+
+### Why this one is different from Parts 2 and 3
+
+| | Part 2 (score 7) | Part 3 (score 8) | **Part 4 (score 9)** |
+|---|---|---|---|
+| New equipment | A sorting line | A heated tunnel | **A sensor on the magnet the yard already owns** |
+| Tonnage it touches | What goes through the line | Car hulks only | **Nearly every ferrous ton, at yards and mills** |
+| How it makes money | A premium on certified lots | Avoided damage and downtime (a cost center) | **Recovered motor value, a low-copper premium, fewer mill claims, and licensing** |
+| Who licenses it | Sorter builders | Shredder operators | **Magnet vendors, every EAF mill, every yard, and waste-to-energy plants** |
+
+### Risks and next steps
+
+1. **Bench test first. This determines G3 and G4.** Put a commercial pulse-induction
+   coil on an energized lifting magnet and lift three loads: clean plate, a
+   motor, and shred with and without motors. Measure the signal separation with
+   the DC field on versus off. If the saturation effect shows up, it is both the
+   invention and the unexpected result to put on record.
+2. **Search** magnet-vendor patents, magnet-controller patents, crane-scale
+   patents, and metal detection in bulk-handling equipment.
+3. **Draft for the genus.** The independent claim should cover "sensing a
+   non-ferromagnetic conductor in material held by an energized lifting
+   magnet," not just one sensor type, so that multi-frequency, pulse, and
+   other approaches all fall inside it.
+4. **Keep it confidential until a provisional is filed.** That includes the
+   bench test with any outside vendor, which should happen under an NDA.
+5. **Size the economics** with the company's own data: tons handled by magnet,
+   the motor-versus-ferrous price spread, the frequency of motors in ferrous
+   loads, and annual mill downgrade claims.
