@@ -1,4 +1,4 @@
-# Patentability Rubric (1–10) and a Scrap-Metal Concept Scored at 7
+# Patentability Rubric (1–10) and Scrap-Metal Concepts Scored at 7 and 8
 
 > This is a structured way to screen ideas. It is not a legal opinion. Any concept
 > that scores 5 or higher should go to a registered patent attorney or agent for a
@@ -69,7 +69,7 @@ These are illustrative, not searched.
 | 5 | A shear blade with teeth at a specific 37–42° rake angle | Easy to design around by using 35° (fails G5) |
 | 6 | A proprietary control scheme for an eddy-current separator inside the yard | Hard to copy, but invisible from outside (fails G6) |
 | **7** | **The concept in Part 2** | Detectable and costly to avoid, but a workable alternative exists (fails G7) |
-| 8 | A shredder-infeed system that detects lithium batteries and **every** practical way of stopping them before shredding falls within the claims | Covers every practical approach, but not pioneering across industries (fails G8) |
+| **8** | **The concept in Part 3** | Covers every practical approach, but applies only to vehicle shredding (fails G8) |
 | 9 | The first practical method for removing copper from molten steel, usable in steel, foundry, and recycling | Long-felt need, cross-industry, but not yet a standard (fails G9) |
 | 10 | A composition-measurement method written into an ISRI/ASTM scrap specification that every mill requires | Indispensable |
 
@@ -193,3 +193,142 @@ don't cover **every** practical way to deliver certified low-residual lots.
    strengthens G3 (unexpected results) and G7 (the size of the design-around gap).
 4. File a provisional application **before** any customer pilot or marketing,
    because public use or an offer for sale starts the 1-year clock.
+
+---
+
+## Part 3 — A Concept That Scores 8
+
+### Title
+
+**Pre-Shred Thermal Neutralization of Pyrotechnic Devices in End-of-Life
+Vehicle Hulks**
+
+### The problem
+
+Auto shredders process flattened end-of-life vehicle (ELV) hulks. Undeployed
+airbag inflators and seat-belt pretensioners are supposed to be removed or
+deployed during dismantling. Many hulks still arrive with live devices,
+because the supplier skipped the step, missed a curtain or knee airbag, or
+flattened the car first.
+
+Once a car is flattened, the wiring is crushed, so the devices can no longer be
+fired electrically. They are also hard to find and hard to pull out. When they
+reach the hammer mill they go off unpredictably, contributing to deflagrations,
+fires, damage to the shredder, and injuries. The shredding yard gets the hulk
+but has no control over, and no practical way to verify, what the supplier did
+upstream.
+
+### The key insight
+
+Pyrotechnic inflators are **designed to function safely when heated from
+outside**. For transport classification and fire safety, inflators and airbag
+modules are tested under external fire exposure (for example, the UN bonfire
+test). Most contain an **auto-ignition material** that sets off the device in a
+controlled way at a set temperature, so that it doesn't rupture violently in a
+vehicle fire.
+
+This means heat neutralizes every device in a hulk, **whether or not anyone
+knows where the devices are**. You don't have to find them first.
+
+### The invention
+
+A containment tunnel installed in line before the shredder infeed:
+
+1. **Contain the hulk.** A flattened hulk enters a blast-rated tunnel, either as
+   a batch chamber or a continuous conveyor tunnel.
+2. **Heat it until the devices fire.** The whole hulk is heated (hot gas,
+   infrared, or induction) until thermocouple or model-verified core
+   temperatures reach or exceed the activation temperature of the auto-ignition
+   material. The setpoint comes from inflator manufacturer data, commonly in the
+   low-to-mid hundreds of °C, and is held for a verified residence time.
+3. **Control fire risk.** The tunnel atmosphere is oxygen-reduced (nitrogen or
+   flue-gas recirculation, with O₂ monitored below a set limit). Volatilized
+   fuel and fluid residues are extracted to a condenser or thermal oxidizer.
+4. **Count the deployments.** Acoustic and pressure-transient sensors count the
+   deployment events in each hulk. Together with the temperature log, this
+   produces a **per-hulk neutralization record**.
+5. **Release to the shredder.** Hulks are released to the shredder only after
+   the temperature and time criteria have been met.
+
+### Draft claim structure
+
+- **Independent method claim (deliberately broad):** before size reduction in a
+  shredder, raise an ELV hulk, within a containment enclosure, to a temperature
+  at or above the activation temperature of the auto-ignition material of its
+  pyrotechnic safety devices, **by any heating means**; then feed the hulk to
+  the shredder.
+- **Independent system claim:** a containment enclosure upstream of the shredder
+  infeed, a heater, temperature verification, and an interlock that blocks
+  release until the temperature and time criteria are met.
+- **Dependent claims:**
+  - (a) an oxygen-reduced atmosphere with O₂ monitoring;
+  - (b) vapor extraction and recovery of fuel and fluid residues;
+  - (c) acoustic or pressure event counting and a per-hulk record;
+  - (d) a setpoint selected from a database of inflator auto-ignition data;
+  - (e) induction heating;
+  - (f) a continuous conveyor tunnel sized to the shredder's feed rate.
+
+### Gate-by-gate scoring
+
+| Gate | Result | Reasoning |
+|---|---|---|
+| G1 Eligible | ✅ Pass | A physical process performed on physical objects, using physical equipment. There is no abstract-idea issue. |
+| G2 Novel | ✅ Pass *(to be confirmed by search)* | Known references cover bulk thermal destruction of **loose, already-removed** inflators (for example, recall disposal), thermal de-coating of aluminum scrap, and shredder explosion venting and suppression. Whole-hulk, in-line thermal neutralization **before shredding** is not expected in any single reference. |
+| G3 Non-obvious | ✅ Pass *(the weakest gate; see risk below)* | An examiner will combine "inflators can be destroyed by heat" with "hulks contain inflators." The rebuttal is **teaching away**. Standard industry practice treats hulks as fuel- and oil-contaminated fire hazards to be kept *away* from heat, so deliberately heating whole hulks is counterintuitive. The technical problems this raises (fuel vapor, fire, throughput) are solved by the claimed containment and atmosphere control, and neither reference addresses them. |
+| G4 Enabled | ✅ Pass | Every component exists in industrial practice: blast-rated enclosures, industrial ovens and induction heaters, inerting systems, vapor recovery, and acoustic event detection. A rough energy estimate puts heating roughly a tonne of steel to about 200 °C at a few tens of kWh, a small cost per hulk. A detailed specification is feasible today. |
+| G5 Non-trivial design-around | ✅ Pass | Follows from G7 below. |
+| G6 Detectable | ✅ Pass | A heated, blast-rated tunnel in front of a shredder is a large, visible installation. It will almost certainly need an **air permit**, since it emits volatilized hydrocarbons. Air permits are public filings that describe the process, and equipment vendors will market it. No discovery is needed. |
+| G7 No viable design-around | ✅ Pass | Because the claim covers heating **by any means**, the remaining alternatives all fall short. The four realistic ones are: **(1) Supplier certification or manual removal.** This is today's practice. It is the source of the problem and adds nothing new. **(2) X-ray imaging plus manual extraction from flattened hulks.** Finding small canisters in crushed steel is unreliable, and extracting them is slow manual work that can't keep pace with a shredder fed many hulks an hour. The cost penalty is far above 15%. **(3) Electrical firing.** It is impossible once the wiring has been crushed. **(4) Tougher shredders or explosion venting and suppression.** These lessen the damage after a device fires in the mill rather than preventing it, deliver well under 85% of the benefit, and complement the invention rather than replacing it. |
+| G8 Pioneering / genus-level | ❌ **Fail** | Part (a) probably passes: undeployed pyrotechnics in shredder feed have been a recognized hazard for well over 5 years, and compliance regimes have not solved it. Part (b) fails. The claims are tied to ELV hulks going into a shredder, and they don't carry over **without modification** to a second distinct industry. Bulk disposal of loose inflators is already prior art, so that market isn't open to these claims. |
+
+**Score: 1 + 7 gates passed = 8.**
+
+### Why it's not a 7
+
+The Part 2 concept had a worse but commercially workable alternative (sampling).
+This concept has none. Its insight is that heat is the **one** mechanism that
+reaches every device regardless of location or wiring, and the independent claim
+covers that mechanism at the genus level ("by any heating means"), not one type
+of heater.
+
+### Why it's not a 9
+
+It is a single-industry patent. Every other context where live pyrotechnic
+devices matter (munitions demilitarization, loose inflator disposal) either
+already uses thermal treatment or needs a different claim.
+
+### What would move it to 9
+
+This would take a claim that generalizes cleanly beyond vehicles. For example, it
+could be reframed as "thermal neutralization of **any** heat-activated embedded
+energetic device in a mixed metal stream before size reduction." That would also
+cover appliance and e-waste shredding, where lithium cells and pressurized
+components behave differently. The reframing works only if test data shows the
+same process reliably neutralizes those hazards too, which is far from certain.
+
+### What would drop it to 7 or lower
+
+- The search finds a reference that heats whole hulks before shredding, for
+  another reason such as de-oiling or pre-pyrolysis. Novelty would then rest on
+  the pyrotechnic setpoint and the interlock. That is narrower and easier to
+  design around, so the score would drop to about 5 or 6.
+- The independent claim has to be narrowed to the oxygen-reduced atmosphere to
+  get past G3. A competitor could then heat in air with fire suppression
+  instead, which would fail G7 and give a 7.
+
+### Main risk and next steps
+
+1. **The main risk is G3, and it pulls against G7.** A broader independent claim
+   helps G7 but hurts G3. Draft a ladder of fallback claims (heat only →
+   heat + containment → + reduced-O₂ atmosphere → + record and interlock) so
+   prosecution can retreat one step at a time without losing enforceability.
+2. **Check safety first.** Test the premise on removed inflators across
+   manufacturers and generations, including ammonium-nitrate designs and hybrid
+   stored-gas inflators. Hybrid inflators respond to heat differently, and
+   their behavior determines both enablement and whether the claims cover
+   "all devices."
+3. **Commission a professional search** focused on: thermal pretreatment of
+   ELVs, inflator disposal by heating, shredder infeed safety, and
+   thermal de-oiling or de-coating of scrap.
+4. **File a provisional application before any pilot, vendor RFQ, or permit
+   application.** An air permit filing is itself a public disclosure.
