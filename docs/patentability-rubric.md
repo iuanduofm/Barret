@@ -477,3 +477,17 @@ The score reaches 10 if magnet-verified copper data becomes what buyers **requir
 5. **Size the economics** with the company's own data: tons handled by magnet,
    the motor-versus-ferrous price spread, the frequency of motors in ferrous
    loads, and annual mill downgrade claims.
+
+### Early search notes (quick web check, not a professional search)
+
+- **Closest reference found:** US 4,544,985, a lifting electromagnet with
+  sensors that respond to **ferromagnetic** objects affecting the magnet's
+  field. This means that sensors in a lifting magnet are not new in themselves.
+  The claims have to depend on detecting **non-ferromagnetic conductors**
+  (copper), not merely on having a sensor in the magnet.
+- **Engineering constraint found:** large scrap magnets build up their own eddy
+  currents for several seconds after being switched on or off (US 4,103,266).
+  Sensing has to happen after the field settles during the hold. Dependent claim
+  (a) already covers this timing, and the bench test has to confirm it.
+- Neither quick search turned up a lifting magnet or magnet controller that
+  detects non-ferrous metal in the lifted load.
