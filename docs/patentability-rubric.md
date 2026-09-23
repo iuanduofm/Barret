@@ -436,7 +436,7 @@ argument (G3).
 | G4 Enabled | ✅ Pass *(the gate to verify first)* | Pulse-induction and multi-frequency eddy-current electronics, ruggedized coils, and magnet controllers are all off-the-shelf. A specification with coil geometry, timing relative to the DC field, and the discrimination logic can be written today. A bench test with a motor, plate, and shred on an energized magnet turns "plausible" into "demonstrated." |
 | G5 Non-trivial design-around | ✅ Pass | Follows from G7 below. |
 | G6 Detectable | ✅ Pass | Magnets are visible equipment sold by a small number of vendors. A "copper-detecting magnet" or retrofit kit would be marketed, and its brochure is the evidence. The certified low-copper shipments are public claims too. |
-| G7 No viable design-around | ✅ Pass | The genus claim covers **any** electromagnetic sensing of the held load while it is lifted. The remaining alternatives: **(1) Hand-picking or sorting lines.** Shredded material only, a separate capital project, and they miss the large share of tonnage that never reaches a conveyor. **(2) Cameras on the crane.** Copper windings sit inside steel housings, so a camera sees a steel lump and can't tell a motor from a gear case with any reliability. **(3) X-ray.** Can't be done safely or practically on a swinging crane in an open yard. **(4) Sense the pile before lifting.** A detector on top of a steel pile runs into the same ferrous background problem this invention solves. No alternative delivers 85% or more of the benefit across all grades at comparable cost. |
+| G7 No viable design-around | ✅ Pass | The genus claim covers **any** electromagnetic sensing of the held load while it is lifted. The remaining alternatives: **(1) Hand-picking or sorting lines.** Shredded material only, a separate capital project, and they miss the large share of tonnage that never reaches a conveyor. **(2) Cameras with AI on the crane.** Many motors *are* visually recognizable by shape, so this is the strongest competitor. It misses motors that are buried in the load, covered, or crushed, and it can't see copper in parts that don't look like motors. **If the bench test shows cameras reach about 85% of the benefit, this gate fails and the score drops to 7.** **(3) X-ray.** Can't be done safely or practically on a swinging crane in an open yard. **(4) Sense the pile before lifting.** A detector on top of a steel pile runs into the same ferrous background problem this invention solves. No alternative delivers 85% or more of the benefit across all grades at comparable cost. |
 | G8 Pioneering / genus-level | ✅ Pass | **(a) Long-felt need:** copper in steel scrap has been a recognized industry problem for decades, and pickers, sensor sorters, cryogenic processing, and melt-stage research have only partly solved it. **(b) Cross-industry:** the same claim works unchanged in scrap recycling, **steelmaking** (mill charge buckets), **waste-to-energy** (magnets recovering ferrous from incinerator ash), and **demolition** (magnets on excavators). |
 | G9 Indispensable | ❌ **Fail** | There is no standard adoption, market share, or copying yet. By the rubric's rule this can't be scored before launch. |
 
@@ -491,3 +491,49 @@ The score reaches 10 if magnet-verified copper data becomes what buyers **requir
   (a) already covers this timing, and the bench test has to confirm it.
 - Neither quick search turned up a lifting magnet or magnet controller that
   detects non-ferrous metal in the lifted load.
+
+### Feasibility review (honest assessment)
+
+**Short answer:** it's possible in principle but not proven, and it's harder than
+the pitch above makes it sound.
+
+What works in its favor:
+- Metal detectors already tell copper from steel by conductivity. That is proven,
+  everyday physics.
+- A solid, closed loop of copper or aluminum produces a strong, slowly decaying
+  signal. That includes squirrel-cage rotors (bars shorted by end rings), large
+  bus bars, and delta-connected windings. These are the parts most likely to show
+  up clearly.
+
+What works against it:
+1. **The saturation effect is partial.** The magnet's DC field saturates the
+   pieces touching the pole face, not the whole hanging clump. Steel further out
+   still produces a strong ferrous response.
+2. **Steel conducts too,** at roughly a tenth of copper's conductivity. Tonnes
+   of steel may give a signal as large as one small motor's.
+3. **Motor windings are thin, insulated wire.** An open-circuit winding is a weak
+   target, much weaker than a solid block of copper. Small motors with open
+   windings may not be detectable at all.
+4. **Distance.** Detector sensitivity to a small target falls off very steeply
+   with range. A motor at the edge of a 1-metre clump may be out of reach.
+5. **The bottom plate shields the sensor.** Magnet bottom plates are
+   non-magnetic manganese steel, which conducts and blocks high-frequency
+   sensing. Coils may need to go around the rim or through slots, not behind
+   the plate.
+6. **Electrical noise.** Rectifier ripple and the magnet's own eddy currents
+   after switching add interference.
+
+**Realistic expectation:** detection of large motors, rotors with copper or
+aluminum cages, and transformers near the magnet face is plausible. Reliable
+detection of small motors buried in a full lift is doubtful.
+
+**Bench test to settle it (a few days of engineering time):**
+1. Mount a large-coil commercial pulse-induction detector at the rim of a lifting
+   magnet.
+2. Lift six loads: clean plate; shred; a small motor alone; a large motor alone;
+   a small motor buried in shred; a large motor buried in shred.
+3. Record the signal with the magnet on and off, at several distances.
+
+**Pass criterion:** the buried motors produce signals clearly separated from
+clean shred across repeated lifts. If only large motors clear the bar, the
+concept is still worth pursuing, but with narrower claims and a lower value.
