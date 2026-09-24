@@ -1,0 +1,80 @@
+==============================================================================
+Chronometric beacon Monte-Carlo  (numpy 2.4.6 )
+HV5/7: int Cn2 h^2 dh = 1.907e-05,  r0(500nm) = 5.0 cm
+sigma_I (850 nm, zenith) vs emitting aperture:
+   D_src =  0.02 m : sigma_I = 0.356   (30 deg: 0.406)
+   D_src =  0.05 m : sigma_I = 0.356   (30 deg: 0.406)
+   D_src =  0.10 m : sigma_I = 0.267   (30 deg: 0.331)
+   D_src =  0.25 m : sigma_I = 0.092   (30 deg: 0.114)
+   D_src =  0.50 m : sigma_I = 0.041   (30 deg: 0.051)
+   D_src =  1.00 m : sigma_I = 0.018   (30 deg: 0.023)
+T_L = 106.2 us, tau = 849.9 us, S_peak = 14107 e-, LSF sigma_t = 74.4 us
+
+--- Absolute mid-exposure time recovery (single band, single pass) ---
+scenario                                                heads  S_pk e-   sigI   rms us  bias us   p95 us unwrapFail
+S0 photon-only, day, J=4, 1 ref (inventor model)           17    14107  0.000     5.42     0.06    10.79      0.00%
+S0b S0 without drive-phase pre-compensation                17    14107  0.000    18.96     0.01    39.53      4.27%
+S1 + all systematics, no scintillation                     17    14107  0.000     5.76     0.14    11.23      0.00%
+S2 + scint, compact emitter D_src=5 cm                     17    14107  0.356    28.81     0.60    47.80     94.63%
+S3 + scint, diffuse panel D_src=0.5 m                      17    14107  0.041    14.58    -0.32    28.64      0.03%
+S4 MITIGATED: D_src=1.0 m, M=3 fine copies, 3 refs         27    14107  0.018     4.88    -0.07     9.75      0.00%
+S5 S4 at night (no background)                             27    14107  0.018     4.67     0.02     9.24      0.00%
+S4b S4 without drive-phase pre-compensation                27    14107  0.018     6.67     0.24    13.62      0.00%
+S6 S4 but NO layout correction                             27    14107  0.018    21.34   -21.18    23.47     99.93%
+S7 S4 at 30 deg off-nadir (pre-aimed heads)                27    10221  0.023     6.23     0.13    12.59      0.00%
+S8 S4 but 16-stage TDI (tau=1.7 ms), P1=4 ms               27    28214  0.018     8.01     0.13    16.01      0.00%
+S9 cubesat framing D_ap=9 cm, GSD 3.7 m, tau=1 ms          27     1098  0.018    22.05     0.38    41.93     10.37%
+S9b S9 with x8 ladder (5 groups) + M=4 fine copies         35     1098  0.018    19.79     0.45    38.83      1.70%
+
+--- TDI stage-count / exposure verification (P1 visibility) ---
+S1 + all systematics, no scintillation
+   ref-normalised + LSF(temporal-MTF) corr: bias     8.7 us, sigma   26.3 us (0.25 stage), correct N:  94.8%
+   ref-normalised, NO LSF correction   : bias    41.9 us, sigma   24.4 us (0.23 stage), correct N:  66.9%
+   self-referenced + LSF corr          : bias     0.3 us, sigma   22.9 us (0.22 stage), correct N:  97.8%
+S3 + scint, diffuse panel D_src=0.5 m
+   ref-normalised + LSF(temporal-MTF) corr: bias     4.7 us, sigma   83.1 us (0.78 stage), correct N:  48.1%
+   ref-normalised, NO LSF correction   : bias    38.6 us, sigma   78.4 us (0.74 stage), correct N:  41.9%
+   self-referenced + LSF corr          : bias    -1.4 us, sigma   48.2 us (0.45 stage), correct N:  72.8%
+S4 MITIGATED: D_src=1.0 m, M=3 fine copies, 3 refs
+   ref-normalised + LSF(temporal-MTF) corr: bias     7.7 us, sigma   26.2 us (0.25 stage), correct N:  94.7%
+   ref-normalised, NO LSF correction   : bias    41.0 us, sigma   24.1 us (0.23 stage), correct N:  68.4%
+   self-referenced + LSF corr          : bias    -0.3 us, sigma   18.4 us (0.17 stage), correct N:  99.6%
+S5 S4 at night (no background)
+   ref-normalised + LSF(temporal-MTF) corr: bias     7.8 us, sigma   25.1 us (0.24 stage), correct N:  96.0%
+   ref-normalised, NO LSF correction   : bias    41.1 us, sigma   23.2 us (0.22 stage), correct N:  70.0%
+   self-referenced + LSF corr          : bias    -0.1 us, sigma   17.4 us (0.16 stage), correct N:  99.9%
+S9 cubesat framing D_ap=9 cm, GSD 3.7 m, tau=1 ms
+   ref-normalised + LSF(temporal-MTF) corr: bias     2.7 us, sigma   86.8 us (0.17 stage), correct N:   nan%
+   ref-normalised, NO LSF correction   : bias     2.7 us, sigma   86.8 us (0.17 stage), correct N:   nan%
+   self-referenced + LSF corr          : bias    -2.9 us, sigma   85.0 us (0.16 stage), correct N:   nan%
+
+--- Waveform families (fine timing, 4 phase steps x M=3, locally unwrapped) ---
+   photon+phot 0.3% (no scint)  sinusoid : rms   3.60 us, bias   0.02 us, outliers 0.00%
+   photon+phot 0.3% (no scint)  pn       : rms   3.21 us, bias   0.14 us, outliers 0.00%
+   photon+phot 0.3% (no scint)  chirp    : rms   3.90 us, bias   0.07 us, outliers 0.00%
+   photon+phot 0.3% (no scint)  edge     : rms   2.91 us, bias   0.09 us, outliers 0.00%
+   + scint D_src=1.0 m          sinusoid : rms   4.91 us, bias  -0.00 us, outliers 0.00%
+   + scint D_src=1.0 m          pn       : rms   4.17 us, bias   0.24 us, outliers 0.00%
+   + scint D_src=1.0 m          chirp    : rms   5.36 us, bias   0.09 us, outliers 0.00%
+   + scint D_src=1.0 m          edge     : rms   3.87 us, bias   0.20 us, outliers 0.00%
+
+--- Single-pass time vs pitch decomposition (truth dt=350 us, dtheta=4 urad) ---
+   S1 + all systematics, no scintillation
+      dt = 350.0 +/- 6.01 us ; dtheta = 4.000 +/- 0.132 urad (with 0.5 urad instantaneous jitter: +/- 0.521 urad)
+   S4 MITIGATED: D_src=1.0 m, M=3 fine copies, 3 refs
+      dt = 350.0 +/- 4.95 us ; dtheta = 4.002 +/- 0.125 urad (with 0.5 urad instantaneous jitter: +/- 0.519 urad)
+
+--- Design-around: multi-pitch GCP collects (pitch -30/0/+30 deg) ---
+   sigma_y=0.5 m/collect,   3 collects: sigma_dt =   478.0 us, sigma_dtheta =  5.59 urad
+   sigma_y=0.5 m/collect,   6 collects: sigma_dt =   337.0 us, sigma_dtheta =  3.94 urad
+   sigma_y=0.5 m/collect,  12 collects: sigma_dt =   238.5 us, sigma_dtheta =  2.79 urad
+   sigma_y=0.5 m/collect,  30 collects: sigma_dt =   151.5 us, sigma_dtheta =  1.77 urad
+   sigma_y=1.0 m/collect,   3 collects: sigma_dt =   741.2 us, sigma_dtheta =  8.57 urad
+   sigma_y=1.0 m/collect,   6 collects: sigma_dt =   523.9 us, sigma_dtheta =  6.05 urad
+   sigma_y=1.0 m/collect,  12 collects: sigma_dt =   363.1 us, sigma_dtheta =  4.19 urad
+   sigma_y=1.0 m/collect,  30 collects: sigma_dt =   228.7 us, sigma_dtheta =  2.64 urad
+   sigma_y=2.0 m/collect,   3 collects: sigma_dt =  1335.3 us, sigma_dtheta = 15.36 urad
+   sigma_y=2.0 m/collect,   6 collects: sigma_dt =   923.1 us, sigma_dtheta = 10.65 urad
+   sigma_y=2.0 m/collect,  12 collects: sigma_dt =   663.0 us, sigma_dtheta =  7.60 urad
+   sigma_y=2.0 m/collect,  30 collects: sigma_dt =   420.2 us, sigma_dtheta =  4.81 urad
+   (no alignment drift, sigma_y=1 m, 3 collects: sigma_dt = 637.5 us)

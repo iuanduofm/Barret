@@ -1,0 +1,434 @@
+[  53.2s] done comb/agri/seed1  grad median 0.043
+[  88.2s] done comb/urban/seed1  grad median 0.084
+[ 122.7s] done floor-zero-jitter-noiseless/urban/seed1  grad median 0.084
+[ 151.9s] done floor-realistic-noiseless/urban/seed1  grad median 0.084
+[ 193.5s] done realistic/urban/seed1  grad median 0.084
+[ 235.8s] done realistic/urban/seed2  grad median 0.084
+[ 278.4s] done realistic/urban/seed3  grad median 0.084
+[ 327.7s] done realistic/agri/seed1  grad median 0.043
+[ 376.7s] done realistic/agri/seed2  grad median 0.044
+[ 423.8s] done realistic/agri/seed3  grad median 0.044
+[ 470.3s] done realistic/low/seed1  grad median 0.015
+[ 516.0s] done realistic/low/seed2  grad median 0.015
+[ 563.0s] done realistic/low/seed3  grad median 0.015
+[ 607.3s] done tonal-large/urban/seed1  grad median 0.084
+
+=== CODE SPECTRA (effective |W|, rms over interleaved codes; N=64, 14.12 kHz) ===
+split        20: 9.05      50:21.84     100:38.37     200:44.00     441: 0.00     882: 0.00    1000: 4.99    1324: 0.00    2000: 4.60    3000: 1.13    7000: 0.34
+rand1        20: 3.03      50: 7.44     100:13.90     200:21.13     441:10.40     882: 5.92    1000: 8.72    1324: 7.66    2000: 2.55    3000: 5.32    7000: 6.07
+multi4       20: 5.24      50:12.64     100:22.15     200:25.13     441: 6.91     882: 5.78    1000: 7.66    1324: 8.59    2000: 7.19    3000: 6.76    7000: 7.32
+seg8         20: 3.03      50: 7.75     100:16.16     200:28.46     441:20.40     882:20.50    1000:14.18    1324: 6.89    2000: 3.46    3000: 4.68    7000: 0.13
+min |W| 20Hz-7kHz: {'split': 0.0, 'rand1': 1.58, 'multi4': 5.187, 'seg8': 0.0}
+min |W| 20Hz-1.6kHz: {'split': 0.0, 'rand1': 3.033, 'multi4': 5.196, 'seg8': 2.718}
+sign changes: {'split': [1], 'rand1': [24], 'multi4': [19, 35, 16, 25], 'seg8': [4, 4, 4, 4]}
+
+=== comb / agri / seed 1: grad median 0.043/px, rms 0.053/px; jitter >20Hz rms x=0.147 y=0.147 px
+  split/eq     slope=0.709/0.687  20Hz-7kHz: err x=0.0909 y=0.0920 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0460 y=0.0466 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0778 y=0.0792 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0176/0.0178 px; 20Hz-1kHz = 0.0181/0.0174 px
+     split-null tones rel.err (x,y): [(441.2, 1.0, 1.0), (882.5, 1.0, 1.0), (1323.8, 1.0, 1.0), (1765.0, 1.0, 1.0), (2206.2, 1.0, 1.0), (2647.5, 1.0, 1.0)]
+     median rel.err all tones 20Hz-3kHz: 0.089; worst: 1.00
+  rand1/eq     slope=0.873/0.840  20Hz-7kHz: err x=0.0640 y=0.0661 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0170 y=0.0184 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0472 y=0.0494 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0183/0.0189 px; 20Hz-1kHz = 0.0147/0.0155 px
+     split-null tones rel.err (x,y): [(441.2, 0.07, 0.05), (882.5, 0.23, 0.22), (1323.8, 0.32, 0.37), (1765.0, 0.51, 0.62), (2206.2, 0.37, 0.41), (2647.5, 0.82, 0.85)]
+     median rel.err all tones 20Hz-3kHz: 0.086; worst: 0.95
+  multi4/eq    slope=0.880/0.854  20Hz-7kHz: err x=0.0617 y=0.0632 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0195 y=0.0200 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0457 y=0.0476 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0198/0.0206 px; 20Hz-1kHz = 0.0166/0.0178 px
+     split-null tones rel.err (x,y): [(441.2, 0.09, 0.01), (882.5, 0.25, 0.28), (1323.8, 0.21, 0.28), (1765.0, 0.61, 0.61), (2206.2, 0.7, 0.7), (2647.5, 0.57, 0.6)]
+     median rel.err all tones 20Hz-3kHz: 0.085; worst: 0.79
+  seg8/eq      slope=0.856/0.836  20Hz-7kHz: err x=0.0720 y=0.0728 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0124 y=0.0119 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0551 y=0.0559 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0133/0.0130 px; 20Hz-1kHz = 0.0088/0.0090 px
+     split-null tones rel.err (x,y): [(441.2, 0.05, 0.06), (882.5, 0.07, 0.01), (1323.8, 0.37, 0.39), (1765.0, 1.0, 1.0), (2206.2, 0.85, 0.83), (2647.5, 0.7, 0.74)]
+     median rel.err all tones 20Hz-3kHz: 0.072; worst: 1.00
+  multi4/raw   slope=0.881/0.854  20Hz-7kHz: err x=0.0617 y=0.0634 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0196 y=0.0200 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0458 y=0.0477 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0200/0.0211 px; 20Hz-1kHz = 0.0167/0.0180 px
+     split-null tones rel.err (x,y): [(441.2, 0.08, 0.01), (882.5, 0.26, 0.27), (1323.8, 0.21, 0.27), (1765.0, 0.61, 0.6), (2206.2, 0.69, 0.7), (2647.5, 0.57, 0.6)]
+     median rel.err all tones 20Hz-3kHz: 0.083; worst: 0.80
+
+=== comb / urban / seed 1: grad median 0.084/px, rms 0.112/px; jitter >20Hz rms x=0.147 y=0.147 px
+  split/eq     slope=0.766/0.743  20Hz-7kHz: err x=0.0828 y=0.0858 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0402 y=0.0424 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0695 y=0.0726 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0162/0.0209 px; 20Hz-1kHz = 0.0154/0.0172 px
+     split-null tones rel.err (x,y): [(441.2, 1.0, 1.0), (882.5, 1.0, 1.0), (1323.8, 1.0, 1.0), (1765.0, 1.0, 1.0), (2206.2, 1.0, 1.0), (2647.5, 1.0, 1.0)]
+     median rel.err all tones 20Hz-3kHz: 0.067; worst: 1.00
+  rand1/eq     slope=0.964/0.928  20Hz-7kHz: err x=0.0457 y=0.0527 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0100 y=0.0123 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0296 y=0.0364 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0145/0.0197 px; 20Hz-1kHz = 0.0076/0.0117 px
+     split-null tones rel.err (x,y): [(441.2, 0.08, 0.08), (882.5, 0.06, 0.02), (1323.8, 0.09, 0.15), (1765.0, 0.16, 0.3), (2206.2, 0.07, 0.14), (2647.5, 0.53, 0.65)]
+     median rel.err all tones 20Hz-3kHz: 0.061; worst: 0.90
+  multi4/eq    slope=0.980/0.956  20Hz-7kHz: err x=0.0363 y=0.0407 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0108 y=0.0119 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0221 y=0.0262 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0155/0.0192 px; 20Hz-1kHz = 0.0097/0.0117 px
+     split-null tones rel.err (x,y): [(441.2, 0.05, 0.02), (882.5, 0.04, 0.08), (1323.8, 0.03, 0.07), (1765.0, 0.2, 0.27), (2206.2, 0.31, 0.35), (2647.5, 0.21, 0.26)]
+     median rel.err all tones 20Hz-3kHz: 0.061; worst: 0.47
+  seg8/eq      slope=0.922/0.909  20Hz-7kHz: err x=0.0599 y=0.0620 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0085 y=0.0087 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0413 y=0.0436 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0116/0.0149 px; 20Hz-1kHz = 0.0044/0.0055 px
+     split-null tones rel.err (x,y): [(441.2, 0.04, 0.05), (882.5, 0.07, 0.05), (1323.8, 0.08, 0.07), (1765.0, 1.0, 1.0), (2206.2, 0.52, 0.56), (2647.5, 0.35, 0.37)]
+     median rel.err all tones 20Hz-3kHz: 0.060; worst: 1.00
+  multi4/raw   slope=0.980/0.956  20Hz-7kHz: err x=0.0364 y=0.0420 (truth 0.147/0.147)  20Hz-1kHz: err x=0.0110 y=0.0134 (truth 0.119/0.119)  300Hz-3kHz: err x=0.0222 y=0.0280 (truth 0.102/0.102)
+     noise floor per 70.8us sample full-band x/y = 0.0157/0.0214 px; 20Hz-1kHz = 0.0100/0.0132 px
+     split-null tones rel.err (x,y): [(441.2, 0.05, 0.0), (882.5, 0.05, 0.12), (1323.8, 0.03, 0.04), (1765.0, 0.2, 0.27), (2206.2, 0.31, 0.35), (2647.5, 0.22, 0.27)]
+     median rel.err all tones 20Hz-3kHz: 0.059; worst: 0.50
+
+=== floor-zero-jitter-noiseless / urban / seed 1: grad median 0.084/px, rms 0.112/px; jitter >20Hz rms x=0.000 y=0.000 px
+  split/eq     FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00030/0.00030 px; 20Hz-1kHz = 0.00027/0.00023 px
+  rand1/eq     FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00023/0.00025 px; 20Hz-1kHz = 0.00018/0.00014 px
+  multi4/eq    FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00023/0.00027 px; 20Hz-1kHz = 0.00019/0.00015 px
+  seg8/eq      FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00020/0.00020 px; 20Hz-1kHz = 0.00015/0.00007 px
+  split/raw    FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00342/0.01514 px; 20Hz-1kHz = 0.00311/0.00986 px
+  rand1/raw    FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00232/0.00880 px; 20Hz-1kHz = 0.00179/0.00461 px
+  multi4/raw   FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00289/0.01742 px; 20Hz-1kHz = 0.00224/0.00610 px
+  seg8/raw     FALSE jitter (no motion, no noise) 20Hz-7kHz x/y = 0.00186/0.00357 px; 20Hz-1kHz = 0.00131/0.00107 px
+
+=== floor-realistic-noiseless / urban / seed 1: grad median 0.084/px, rms 0.112/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.888/0.796  20Hz-7kHz: err x=0.1023 y=0.1522 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0868 y=0.1364 (truth 0.238/0.288)  300Hz-3kHz: err x=0.1007 y=0.1507 (truth 0.145/0.195)
+  rand1/eq     slope=1.044/1.016  20Hz-7kHz: err x=0.0317 y=0.0473 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0193 y=0.0229 (truth 0.238/0.288)  300Hz-3kHz: err x=0.0265 y=0.0415 (truth 0.145/0.195)
+  multi4/eq    slope=1.047/1.021  20Hz-7kHz: err x=0.0274 y=0.0377 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0194 y=0.0207 (truth 0.238/0.288)  300Hz-3kHz: err x=0.0208 y=0.0317 (truth 0.145/0.195)
+  seg8/eq      slope=1.031/1.018  20Hz-7kHz: err x=0.0462 y=0.0568 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0191 y=0.0194 (truth 0.238/0.288)  300Hz-3kHz: err x=0.0431 y=0.0536 (truth 0.145/0.195)
+  multi4/raw   slope=1.046/1.020  20Hz-7kHz: err x=0.0273 y=0.0386 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0193 y=0.0214 (truth 0.238/0.288)  300Hz-3kHz: err x=0.0209 y=0.0328 (truth 0.145/0.195)
+
+=== realistic / urban / seed 1: grad median 0.084/px, rms 0.111/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.882/0.844  20Hz-7kHz: err x=0.1006 y=0.1371 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0841 y=0.1178 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0994 y=0.1355 (truth 0.151/0.175)
+     MTF@0.5 x_cross: none 0.829 | int-causal 0.562 | bilin-causal 0.253 | lanc3-causal 0.336 | bilin-oracle 0.316 | lanc3-oracle 0.412 | lanc3-buffered 0.399
+        restore-only 0.956 (err 0.073, noise +1.4 dB, oracle 0.990) | lanc3-causal+restore 0.678 (+7.0 dB) | lanc3-buffered+restore 0.771 (+6.6 dB)
+     MTF@0.45 x_cross: none 0.859 | int-causal 0.606 | bilin-causal 0.317 | lanc3-causal 0.481 | bilin-oracle 0.404 | lanc3-oracle 0.603 | lanc3-buffered 0.577
+        restore-only 0.964 (err 0.061, noise +1.1 dB, oracle 0.993) | lanc3-causal+restore 0.886 (+5.9 dB) | lanc3-buffered+restore 0.920 (+4.5 dB)
+     MTF@0.25 x_cross: none 0.954 | int-causal 0.846 | bilin-causal 0.729 | lanc3-causal 0.967 | bilin-oracle 0.780 | lanc3-oracle 1.014 | lanc3-buffered 1.002
+        restore-only 0.989 (err 0.024, noise +0.3 dB, oracle 0.998) | lanc3-causal+restore 0.988 (+0.2 dB) | lanc3-buffered+restore 0.988 (-0.1 dB)
+        win-rms 0.195 px, causal-pred err 0.225 px, line-centroid resid 0.0121 px, splat noise-var ratio bilin 0.60 lanc3 0.85
+     MTF@0.5 y_along: none 0.767 | int-causal 0.550 | bilin-causal 0.296 | lanc3-causal 0.379 | bilin-oracle 0.354 | lanc3-oracle 0.451 | lanc3-buffered 0.416
+        restore-only 0.925 (err 0.109, noise +1.9 dB, oracle 0.984) | lanc3-causal+restore 0.705 (+6.6 dB) | lanc3-buffered+restore 0.787 (+6.4 dB)
+     MTF@0.45 y_along: none 0.807 | int-causal 0.605 | bilin-causal 0.365 | lanc3-causal 0.524 | bilin-oracle 0.439 | lanc3-oracle 0.633 | lanc3-buffered 0.584
+        restore-only 0.940 (err 0.087, noise +1.5 dB, oracle 0.988) | lanc3-causal+restore 0.880 (+5.3 dB) | lanc3-buffered+restore 0.897 (+4.0 dB)
+     MTF@0.25 y_along: none 0.936 | int-causal 0.851 | bilin-causal 0.748 | lanc3-causal 0.961 | bilin-oracle 0.792 | lanc3-oracle 1.013 | lanc3-buffered 0.992
+        restore-only 0.982 (err 0.031, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.980 (+0.2 dB) | lanc3-buffered+restore 0.979 (-0.1 dB)
+        win-rms 0.232 px, causal-pred err 0.246 px, line-centroid resid 0.0124 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  rand1/eq     slope=1.029/1.010  20Hz-7kHz: err x=0.0345 y=0.0497 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0179 y=0.0227 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0304 y=0.0441 (truth 0.151/0.175)
+  multi4/eq    slope=1.029/1.016  20Hz-7kHz: err x=0.0299 y=0.0406 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0178 y=0.0213 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0252 y=0.0349 (truth 0.151/0.175)
+     MTF@0.5 x_cross: none 0.829 | int-causal 0.532 | bilin-causal 0.256 | lanc3-causal 0.337 | bilin-oracle 0.316 | lanc3-oracle 0.412 | lanc3-buffered 0.422
+        restore-only 0.997 (err 0.040, noise +1.7 dB, oracle 0.990) | lanc3-causal+restore 0.704 (+7.1 dB) | lanc3-buffered+restore 0.837 (+6.6 dB)
+     MTF@0.45 x_cross: none 0.859 | int-causal 0.589 | bilin-causal 0.329 | lanc3-causal 0.496 | bilin-oracle 0.404 | lanc3-oracle 0.603 | lanc3-buffered 0.609
+        restore-only 0.998 (err 0.035, noise +1.4 dB, oracle 0.993) | lanc3-causal+restore 0.925 (+5.9 dB) | lanc3-buffered+restore 0.958 (+4.2 dB)
+     MTF@0.25 x_cross: none 0.954 | int-causal 0.845 | bilin-causal 0.737 | lanc3-causal 0.972 | bilin-oracle 0.780 | lanc3-oracle 1.014 | lanc3-buffered 1.013
+        restore-only 1.000 (err 0.018, noise +0.4 dB, oracle 0.998) | lanc3-causal+restore 0.999 (+0.2 dB) | lanc3-buffered+restore 0.999 (-0.1 dB)
+        win-rms 0.195 px, causal-pred err 0.213 px, line-centroid resid 0.0113 px, splat noise-var ratio bilin 0.60 lanc3 0.86
+     MTF@0.5 y_along: none 0.767 | int-causal 0.546 | bilin-causal 0.312 | lanc3-causal 0.394 | bilin-oracle 0.354 | lanc3-oracle 0.451 | lanc3-buffered 0.451
+        restore-only 0.986 (err 0.043, noise +2.5 dB, oracle 0.984) | lanc3-causal+restore 0.777 (+6.8 dB) | lanc3-buffered+restore 0.884 (+6.4 dB)
+     MTF@0.45 y_along: none 0.807 | int-causal 0.607 | bilin-causal 0.389 | lanc3-causal 0.554 | bilin-oracle 0.439 | lanc3-oracle 0.633 | lanc3-buffered 0.630
+        restore-only 0.990 (err 0.035, noise +2.0 dB, oracle 0.988) | lanc3-causal+restore 0.936 (+5.1 dB) | lanc3-buffered+restore 0.963 (+3.9 dB)
+     MTF@0.25 y_along: none 0.936 | int-causal 0.857 | bilin-causal 0.763 | lanc3-causal 0.973 | bilin-oracle 0.792 | lanc3-oracle 1.013 | lanc3-buffered 1.011
+        restore-only 0.997 (err 0.017, noise +0.6 dB, oracle 0.997) | lanc3-causal+restore 0.997 (+0.2 dB) | lanc3-buffered+restore 0.998 (-0.1 dB)
+        win-rms 0.232 px, causal-pred err 0.223 px, line-centroid resid 0.0103 px, splat noise-var ratio bilin 0.64 lanc3 0.88
+  seg8/eq      slope=1.018/1.006  20Hz-7kHz: err x=0.0474 y=0.0602 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0170 y=0.0182 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0451 y=0.0570 (truth 0.151/0.175)
+  multi4/raw   slope=1.029/1.016  20Hz-7kHz: err x=0.0300 y=0.0409 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0178 y=0.0216 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0253 y=0.0352 (truth 0.151/0.175)
+
+=== realistic / urban / seed 2: grad median 0.084/px, rms 0.111/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.830/0.813  20Hz-7kHz: err x=0.1148 y=0.1425 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0989 y=0.1246 (truth 0.235/0.285)  300Hz-3kHz: err x=0.1138 y=0.1411 (truth 0.169/0.192)
+     MTF@0.5 x_cross: none 0.786 | int-causal 0.493 | bilin-causal 0.212 | lanc3-causal 0.286 | bilin-oracle 0.320 | lanc3-oracle 0.413 | lanc3-buffered 0.380
+        restore-only 0.937 (err 0.100, noise +1.7 dB, oracle 0.987) | lanc3-causal+restore 0.625 (+7.4 dB) | lanc3-buffered+restore 0.752 (+6.7 dB)
+     MTF@0.45 x_cross: none 0.823 | int-causal 0.544 | bilin-causal 0.281 | lanc3-causal 0.444 | bilin-oracle 0.411 | lanc3-oracle 0.608 | lanc3-buffered 0.565
+        restore-only 0.949 (err 0.082, noise +1.4 dB, oracle 0.990) | lanc3-causal+restore 0.859 (+6.2 dB) | lanc3-buffered+restore 0.904 (+4.4 dB)
+     MTF@0.25 x_cross: none 0.942 | int-causal 0.821 | bilin-causal 0.714 | lanc3-causal 0.959 | bilin-oracle 0.783 | lanc3-oracle 1.014 | lanc3-buffered 0.997
+        restore-only 0.984 (err 0.029, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.983 (+0.2 dB) | lanc3-buffered+restore 0.983 (-0.1 dB)
+        win-rms 0.221 px, causal-pred err 0.262 px, line-centroid resid 0.0124 px, splat noise-var ratio bilin 0.58 lanc3 0.85
+     MTF@0.5 y_along: none 0.745 | int-causal 0.485 | bilin-causal 0.266 | lanc3-causal 0.338 | bilin-oracle 0.379 | lanc3-oracle 0.476 | lanc3-buffered 0.426
+        restore-only 0.914 (err 0.124, noise +2.1 dB, oracle 0.981) | lanc3-causal+restore 0.658 (+6.9 dB) | lanc3-buffered+restore 0.790 (+6.3 dB)
+     MTF@0.45 y_along: none 0.787 | int-causal 0.542 | bilin-causal 0.338 | lanc3-causal 0.490 | bilin-oracle 0.462 | lanc3-oracle 0.652 | lanc3-buffered 0.593
+        restore-only 0.931 (err 0.100, noise +1.7 dB, oracle 0.987) | lanc3-causal+restore 0.860 (+5.6 dB) | lanc3-buffered+restore 0.896 (+4.0 dB)
+     MTF@0.25 y_along: none 0.929 | int-causal 0.824 | bilin-causal 0.735 | lanc3-causal 0.952 | bilin-oracle 0.800 | lanc3-oracle 1.012 | lanc3-buffered 0.989
+        restore-only 0.978 (err 0.034, noise +0.5 dB, oracle 0.997) | lanc3-causal+restore 0.977 (+0.2 dB) | lanc3-buffered+restore 0.976 (-0.1 dB)
+        win-rms 0.245 px, causal-pred err 0.270 px, line-centroid resid 0.0113 px, splat noise-var ratio bilin 0.62 lanc3 0.87
+  rand1/eq     slope=1.026/0.999  20Hz-7kHz: err x=0.0371 y=0.0515 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0191 y=0.0216 (truth 0.235/0.285)  300Hz-3kHz: err x=0.0332 y=0.0463 (truth 0.169/0.192)
+  multi4/eq    slope=1.022/1.007  20Hz-7kHz: err x=0.0314 y=0.0400 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0179 y=0.0195 (truth 0.235/0.285)  300Hz-3kHz: err x=0.0272 y=0.0350 (truth 0.169/0.192)
+     MTF@0.5 x_cross: none 0.786 | int-causal 0.484 | bilin-causal 0.226 | lanc3-causal 0.299 | bilin-oracle 0.320 | lanc3-oracle 0.413 | lanc3-buffered 0.418
+        restore-only 0.994 (err 0.042, noise +2.3 dB, oracle 0.987) | lanc3-causal+restore 0.681 (+7.5 dB) | lanc3-buffered+restore 0.847 (+6.7 dB)
+     MTF@0.45 x_cross: none 0.823 | int-causal 0.546 | bilin-causal 0.306 | lanc3-causal 0.473 | bilin-oracle 0.411 | lanc3-oracle 0.608 | lanc3-buffered 0.610
+        restore-only 0.996 (err 0.036, noise +1.8 dB, oracle 0.990) | lanc3-causal+restore 0.914 (+6.1 dB) | lanc3-buffered+restore 0.959 (+4.1 dB)
+     MTF@0.25 x_cross: none 0.942 | int-causal 0.828 | bilin-causal 0.728 | lanc3-causal 0.968 | bilin-oracle 0.783 | lanc3-oracle 1.014 | lanc3-buffered 1.013
+        restore-only 0.999 (err 0.018, noise +0.5 dB, oracle 0.997) | lanc3-causal+restore 0.998 (+0.3 dB) | lanc3-buffered+restore 0.999 (-0.1 dB)
+        win-rms 0.221 px, causal-pred err 0.246 px, line-centroid resid 0.0110 px, splat noise-var ratio bilin 0.59 lanc3 0.85
+     MTF@0.5 y_along: none 0.745 | int-causal 0.513 | bilin-causal 0.287 | lanc3-causal 0.363 | bilin-oracle 0.379 | lanc3-oracle 0.476 | lanc3-buffered 0.474
+        restore-only 0.982 (err 0.041, noise +2.7 dB, oracle 0.981) | lanc3-causal+restore 0.745 (+7.0 dB) | lanc3-buffered+restore 0.891 (+6.1 dB)
+     MTF@0.45 y_along: none 0.787 | int-causal 0.575 | bilin-causal 0.365 | lanc3-causal 0.526 | bilin-oracle 0.462 | lanc3-oracle 0.652 | lanc3-buffered 0.648
+        restore-only 0.987 (err 0.032, noise +2.2 dB, oracle 0.987) | lanc3-causal+restore 0.927 (+5.5 dB) | lanc3-buffered+restore 0.965 (+3.7 dB)
+     MTF@0.25 y_along: none 0.929 | int-causal 0.841 | bilin-causal 0.750 | lanc3-causal 0.966 | bilin-oracle 0.800 | lanc3-oracle 1.012 | lanc3-buffered 1.010
+        restore-only 0.997 (err 0.016, noise +0.6 dB, oracle 0.997) | lanc3-causal+restore 0.996 (+0.3 dB) | lanc3-buffered+restore 0.998 (-0.1 dB)
+        win-rms 0.245 px, causal-pred err 0.246 px, line-centroid resid 0.0096 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  seg8/eq      slope=1.012/1.001  20Hz-7kHz: err x=0.0506 y=0.0586 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0177 y=0.0177 (truth 0.235/0.285)  300Hz-3kHz: err x=0.0485 y=0.0557 (truth 0.169/0.192)
+  multi4/raw   slope=1.021/1.006  20Hz-7kHz: err x=0.0315 y=0.0431 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0178 y=0.0216 (truth 0.235/0.285)  300Hz-3kHz: err x=0.0273 y=0.0382 (truth 0.169/0.192)
+
+=== realistic / urban / seed 3: grad median 0.084/px, rms 0.112/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.796/0.848  20Hz-7kHz: err x=0.1224 y=0.1330 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1072 y=0.1166 (truth 0.234/0.289)  300Hz-3kHz: err x=0.1215 y=0.1315 (truth 0.167/0.174)
+     MTF@0.5 x_cross: none 0.812 | int-causal 0.573 | bilin-causal 0.224 | lanc3-causal 0.307 | bilin-oracle 0.327 | lanc3-oracle 0.423 | lanc3-buffered 0.389
+        restore-only 0.930 (err 0.094, noise +1.3 dB, oracle 0.989) | lanc3-causal+restore 0.639 (+7.1 dB) | lanc3-buffered+restore 0.755 (+6.7 dB)
+     MTF@0.45 x_cross: none 0.845 | int-causal 0.618 | bilin-causal 0.290 | lanc3-causal 0.457 | bilin-oracle 0.415 | lanc3-oracle 0.613 | lanc3-buffered 0.566
+        restore-only 0.943 (err 0.077, noise +1.0 dB, oracle 0.992) | lanc3-causal+restore 0.867 (+6.1 dB) | lanc3-buffered+restore 0.905 (+4.5 dB)
+     MTF@0.25 x_cross: none 0.949 | int-causal 0.851 | bilin-causal 0.717 | lanc3-causal 0.965 | bilin-oracle 0.783 | lanc3-oracle 1.014 | lanc3-buffered 0.996
+        restore-only 0.982 (err 0.028, noise +0.3 dB, oracle 0.998) | lanc3-causal+restore 0.982 (+0.2 dB) | lanc3-buffered+restore 0.982 (-0.1 dB)
+        win-rms 0.205 px, causal-pred err 0.255 px, line-centroid resid 0.0109 px, splat noise-var ratio bilin 0.58 lanc3 0.85
+     MTF@0.5 y_along: none 0.772 | int-causal 0.553 | bilin-causal 0.292 | lanc3-causal 0.377 | bilin-oracle 0.369 | lanc3-oracle 0.468 | lanc3-buffered 0.418
+        restore-only 0.923 (err 0.120, noise +1.9 dB, oracle 0.983) | lanc3-causal+restore 0.711 (+6.6 dB) | lanc3-buffered+restore 0.769 (+6.3 dB)
+     MTF@0.45 y_along: none 0.811 | int-causal 0.608 | bilin-causal 0.362 | lanc3-causal 0.523 | bilin-oracle 0.453 | lanc3-oracle 0.646 | lanc3-buffered 0.588
+        restore-only 0.939 (err 0.094, noise +1.5 dB, oracle 0.988) | lanc3-causal+restore 0.879 (+5.2 dB) | lanc3-buffered+restore 0.901 (+4.1 dB)
+     MTF@0.25 y_along: none 0.937 | int-causal 0.854 | bilin-causal 0.746 | lanc3-causal 0.961 | bilin-oracle 0.797 | lanc3-oracle 1.013 | lanc3-buffered 0.991
+        restore-only 0.981 (err 0.031, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.980 (+0.2 dB) | lanc3-buffered+restore 0.979 (-0.1 dB)
+        win-rms 0.230 px, causal-pred err 0.246 px, line-centroid resid 0.0119 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  rand1/eq     slope=1.016/1.010  20Hz-7kHz: err x=0.0358 y=0.0478 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0169 y=0.0230 (truth 0.234/0.289)  300Hz-3kHz: err x=0.0325 y=0.0422 (truth 0.167/0.174)
+  multi4/eq    slope=1.026/1.019  20Hz-7kHz: err x=0.0311 y=0.0368 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0180 y=0.0203 (truth 0.234/0.289)  300Hz-3kHz: err x=0.0268 y=0.0309 (truth 0.167/0.174)
+     MTF@0.5 x_cross: none 0.812 | int-causal 0.512 | bilin-causal 0.242 | lanc3-causal 0.321 | bilin-oracle 0.327 | lanc3-oracle 0.423 | lanc3-buffered 0.432
+        restore-only 0.997 (err 0.037, noise +1.9 dB, oracle 0.989) | lanc3-causal+restore 0.698 (+7.3 dB) | lanc3-buffered+restore 0.853 (+6.5 dB)
+     MTF@0.45 x_cross: none 0.845 | int-causal 0.571 | bilin-causal 0.320 | lanc3-causal 0.491 | bilin-oracle 0.415 | lanc3-oracle 0.613 | lanc3-buffered 0.618
+        restore-only 0.997 (err 0.033, noise +1.5 dB, oracle 0.992) | lanc3-causal+restore 0.924 (+5.9 dB) | lanc3-buffered+restore 0.959 (+4.1 dB)
+     MTF@0.25 x_cross: none 0.949 | int-causal 0.839 | bilin-causal 0.736 | lanc3-causal 0.974 | bilin-oracle 0.783 | lanc3-oracle 1.014 | lanc3-buffered 1.012
+        restore-only 0.999 (err 0.017, noise +0.5 dB, oracle 0.998) | lanc3-causal+restore 0.998 (+0.2 dB) | lanc3-buffered+restore 0.999 (-0.1 dB)
+        win-rms 0.205 px, causal-pred err 0.237 px, line-centroid resid 0.0104 px, splat noise-var ratio bilin 0.60 lanc3 0.86
+     MTF@0.5 y_along: none 0.772 | int-causal 0.551 | bilin-causal 0.307 | lanc3-causal 0.392 | bilin-oracle 0.369 | lanc3-oracle 0.468 | lanc3-buffered 0.466
+        restore-only 0.987 (err 0.052, noise +2.5 dB, oracle 0.983) | lanc3-causal+restore 0.783 (+6.8 dB) | lanc3-buffered+restore 0.874 (+6.2 dB)
+     MTF@0.45 y_along: none 0.811 | int-causal 0.611 | bilin-causal 0.385 | lanc3-causal 0.552 | bilin-oracle 0.453 | lanc3-oracle 0.646 | lanc3-buffered 0.643
+        restore-only 0.991 (err 0.040, noise +2.0 dB, oracle 0.988) | lanc3-causal+restore 0.940 (+5.1 dB) | lanc3-buffered+restore 0.965 (+3.8 dB)
+     MTF@0.25 y_along: none 0.937 | int-causal 0.858 | bilin-causal 0.760 | lanc3-causal 0.973 | bilin-oracle 0.797 | lanc3-oracle 1.013 | lanc3-buffered 1.011
+        restore-only 0.998 (err 0.019, noise +0.6 dB, oracle 0.997) | lanc3-causal+restore 0.997 (+0.2 dB) | lanc3-buffered+restore 0.999 (-0.1 dB)
+        win-rms 0.230 px, causal-pred err 0.223 px, line-centroid resid 0.0113 px, splat noise-var ratio bilin 0.64 lanc3 0.88
+  seg8/eq      slope=1.006/1.014  20Hz-7kHz: err x=0.0508 y=0.0538 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0168 y=0.0176 (truth 0.234/0.289)  300Hz-3kHz: err x=0.0489 y=0.0508 (truth 0.167/0.174)
+  multi4/raw   slope=1.026/1.019  20Hz-7kHz: err x=0.0311 y=0.0371 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0180 y=0.0204 (truth 0.234/0.289)  300Hz-3kHz: err x=0.0268 y=0.0311 (truth 0.167/0.174)
+
+=== realistic / agri / seed 1: grad median 0.043/px, rms 0.054/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.820/0.808  20Hz-7kHz: err x=0.1204 y=0.1420 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1016 y=0.1196 (truth 0.237/0.285)  300Hz-3kHz: err x=0.1189 y=0.1410 (truth 0.154/0.181)
+     MTF@0.5 x_cross: none 0.806 | int-causal 0.492 | bilin-causal 0.200 | lanc3-causal 0.277 | bilin-oracle 0.293 | lanc3-oracle 0.382 | lanc3-buffered 0.355
+        restore-only 0.940 (err 0.112, noise +1.7 dB, oracle 0.985) | lanc3-causal+restore 0.586 (+7.2 dB) | lanc3-buffered+restore 0.691 (+6.8 dB)
+     MTF@0.45 x_cross: none 0.839 | int-causal 0.546 | bilin-causal 0.278 | lanc3-causal 0.453 | bilin-oracle 0.388 | lanc3-oracle 0.588 | lanc3-buffered 0.549
+        restore-only 0.953 (err 0.083, noise +1.4 dB, oracle 0.989) | lanc3-causal+restore 0.871 (+6.2 dB) | lanc3-buffered+restore 0.903 (+4.8 dB)
+     MTF@0.25 x_cross: none 0.946 | int-causal 0.827 | bilin-causal 0.719 | lanc3-causal 0.972 | bilin-oracle 0.775 | lanc3-oracle 1.015 | lanc3-buffered 0.999
+        restore-only 0.986 (err 0.029, noise +0.4 dB, oracle 0.998) | lanc3-causal+restore 0.985 (+0.1 dB) | lanc3-buffered+restore 0.984 (-0.1 dB)
+        win-rms 0.212 px, causal-pred err 0.223 px, line-centroid resid 0.0132 px, splat noise-var ratio bilin 0.57 lanc3 0.84
+     MTF@0.5 y_along: none 0.760 | int-causal 0.572 | bilin-causal 0.335 | lanc3-causal 0.421 | bilin-oracle 0.382 | lanc3-oracle 0.479 | lanc3-buffered 0.441
+        restore-only 0.908 (err 0.116, noise +1.8 dB, oracle 0.984) | lanc3-causal+restore 0.742 (+6.3 dB) | lanc3-buffered+restore 0.775 (+6.0 dB)
+     MTF@0.45 y_along: none 0.800 | int-causal 0.625 | bilin-causal 0.396 | lanc3-causal 0.548 | bilin-oracle 0.464 | lanc3-oracle 0.654 | lanc3-buffered 0.602
+        restore-only 0.925 (err 0.095, noise +1.4 dB, oracle 0.988) | lanc3-causal+restore 0.883 (+5.0 dB) | lanc3-buffered+restore 0.896 (+3.9 dB)
+     MTF@0.25 y_along: none 0.934 | int-causal 0.858 | bilin-causal 0.754 | lanc3-causal 0.953 | bilin-oracle 0.801 | lanc3-oracle 1.012 | lanc3-buffered 0.989
+        restore-only 0.977 (err 0.033, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.975 (+0.2 dB) | lanc3-buffered+restore 0.977 (-0.1 dB)
+        win-rms 0.235 px, causal-pred err 0.252 px, line-centroid resid 0.0126 px, splat noise-var ratio bilin 0.65 lanc3 0.89
+  rand1/eq     slope=0.984/0.947  20Hz-7kHz: err x=0.0579 y=0.0672 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0292 y=0.0343 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0547 y=0.0645 (truth 0.154/0.181)
+  multi4/eq    slope=0.983/0.950  20Hz-7kHz: err x=0.0559 y=0.0666 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0311 y=0.0360 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0525 y=0.0646 (truth 0.154/0.181)
+     MTF@0.5 x_cross: none 0.806 | int-causal 0.476 | bilin-causal 0.215 | lanc3-causal 0.291 | bilin-oracle 0.293 | lanc3-oracle 0.382 | lanc3-buffered 0.386
+        restore-only 0.976 (err 0.077, noise +2.0 dB, oracle 0.985) | lanc3-causal+restore 0.637 (+7.4 dB) | lanc3-buffered+restore 0.772 (+6.8 dB)
+     MTF@0.45 x_cross: none 0.839 | int-causal 0.543 | bilin-causal 0.300 | lanc3-causal 0.477 | bilin-oracle 0.388 | lanc3-oracle 0.588 | lanc3-buffered 0.585
+        restore-only 0.982 (err 0.055, noise +1.7 dB, oracle 0.989) | lanc3-causal+restore 0.913 (+6.1 dB) | lanc3-buffered+restore 0.947 (+4.5 dB)
+     MTF@0.25 x_cross: none 0.946 | int-causal 0.831 | bilin-causal 0.730 | lanc3-causal 0.979 | bilin-oracle 0.775 | lanc3-oracle 1.015 | lanc3-buffered 1.011
+        restore-only 0.996 (err 0.022, noise +0.5 dB, oracle 0.998) | lanc3-causal+restore 0.996 (+0.2 dB) | lanc3-buffered+restore 0.997 (-0.1 dB)
+        win-rms 0.212 px, causal-pred err 0.210 px, line-centroid resid 0.0131 px, splat noise-var ratio bilin 0.58 lanc3 0.85
+     MTF@0.5 y_along: none 0.760 | int-causal 0.580 | bilin-causal 0.345 | lanc3-causal 0.430 | bilin-oracle 0.382 | lanc3-oracle 0.479 | lanc3-buffered 0.472
+        restore-only 0.951 (err 0.069, noise +2.2 dB, oracle 0.984) | lanc3-causal+restore 0.792 (+6.4 dB) | lanc3-buffered+restore 0.865 (+6.1 dB)
+     MTF@0.45 y_along: none 0.800 | int-causal 0.638 | bilin-causal 0.413 | lanc3-causal 0.570 | bilin-oracle 0.464 | lanc3-oracle 0.654 | lanc3-buffered 0.643
+        restore-only 0.961 (err 0.058, noise +1.7 dB, oracle 0.988) | lanc3-causal+restore 0.930 (+4.9 dB) | lanc3-buffered+restore 0.956 (+3.8 dB)
+     MTF@0.25 y_along: none 0.934 | int-causal 0.869 | bilin-causal 0.766 | lanc3-causal 0.964 | bilin-oracle 0.801 | lanc3-oracle 1.012 | lanc3-buffered 1.007
+        restore-only 0.988 (err 0.024, noise +0.5 dB, oracle 0.997) | lanc3-causal+restore 0.991 (+0.2 dB) | lanc3-buffered+restore 0.995 (-0.1 dB)
+        win-rms 0.235 px, causal-pred err 0.232 px, line-centroid resid 0.0121 px, splat noise-var ratio bilin 0.66 lanc3 0.89
+  seg8/eq      slope=0.994/0.968  20Hz-7kHz: err x=0.0613 y=0.0717 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0193 y=0.0189 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0592 y=0.0701 (truth 0.154/0.181)
+  multi4/raw   slope=0.984/0.952  20Hz-7kHz: err x=0.0560 y=0.0667 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0311 y=0.0363 (truth 0.237/0.285)  300Hz-3kHz: err x=0.0526 y=0.0645 (truth 0.154/0.181)
+
+=== realistic / agri / seed 2: grad median 0.044/px, rms 0.054/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.783/0.812  20Hz-7kHz: err x=0.1249 y=0.1435 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1048 y=0.1233 (truth 0.235/0.286)  300Hz-3kHz: err x=0.1237 y=0.1424 (truth 0.166/0.178)
+     MTF@0.5 x_cross: none 0.811 | int-causal 0.519 | bilin-causal 0.240 | lanc3-causal 0.320 | bilin-oracle 0.316 | lanc3-oracle 0.409 | lanc3-buffered 0.384
+        restore-only 0.922 (err 0.100, noise +1.2 dB, oracle 0.989) | lanc3-causal+restore 0.644 (+7.0 dB) | lanc3-buffered+restore 0.756 (+6.7 dB)
+     MTF@0.45 x_cross: none 0.844 | int-causal 0.573 | bilin-causal 0.312 | lanc3-causal 0.478 | bilin-oracle 0.406 | lanc3-oracle 0.602 | lanc3-buffered 0.559
+        restore-only 0.937 (err 0.083, noise +1.0 dB, oracle 0.992) | lanc3-causal+restore 0.864 (+5.8 dB) | lanc3-buffered+restore 0.894 (+4.4 dB)
+     MTF@0.25 x_cross: none 0.949 | int-causal 0.837 | bilin-causal 0.729 | lanc3-causal 0.966 | bilin-oracle 0.781 | lanc3-oracle 1.014 | lanc3-buffered 0.995
+        restore-only 0.980 (err 0.030, noise +0.3 dB, oracle 0.998) | lanc3-causal+restore 0.979 (+0.1 dB) | lanc3-buffered+restore 0.981 (-0.1 dB)
+        win-rms 0.206 px, causal-pred err 0.237 px, line-centroid resid 0.0124 px, splat noise-var ratio bilin 0.60 lanc3 0.86
+     MTF@0.5 y_along: none 0.758 | int-causal 0.593 | bilin-causal 0.337 | lanc3-causal 0.422 | bilin-oracle 0.388 | lanc3-oracle 0.487 | lanc3-buffered 0.441
+        restore-only 0.909 (err 0.127, noise +2.1 dB, oracle 0.982) | lanc3-causal+restore 0.729 (+6.1 dB) | lanc3-buffered+restore 0.771 (+6.1 dB)
+     MTF@0.45 y_along: none 0.798 | int-causal 0.644 | bilin-causal 0.400 | lanc3-causal 0.551 | bilin-oracle 0.469 | lanc3-oracle 0.659 | lanc3-buffered 0.599
+        restore-only 0.928 (err 0.102, noise +1.6 dB, oracle 0.987) | lanc3-causal+restore 0.876 (+4.8 dB) | lanc3-buffered+restore 0.895 (+4.0 dB)
+     MTF@0.25 y_along: none 0.932 | int-causal 0.866 | bilin-causal 0.757 | lanc3-causal 0.955 | bilin-oracle 0.802 | lanc3-oracle 1.012 | lanc3-buffered 0.987
+        restore-only 0.977 (err 0.035, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.975 (+0.2 dB) | lanc3-buffered+restore 0.975 (-0.1 dB)
+        win-rms 0.239 px, causal-pred err 0.255 px, line-centroid resid 0.0129 px, splat noise-var ratio bilin 0.65 lanc3 0.88
+  rand1/eq     slope=0.962/0.955  20Hz-7kHz: err x=0.0599 y=0.0683 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0296 y=0.0335 (truth 0.235/0.286)  300Hz-3kHz: err x=0.0572 y=0.0665 (truth 0.166/0.178)
+  multi4/eq    slope=0.959/0.956  20Hz-7kHz: err x=0.0586 y=0.0668 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0315 y=0.0375 (truth 0.235/0.286)  300Hz-3kHz: err x=0.0560 y=0.0645 (truth 0.166/0.178)
+     MTF@0.5 x_cross: none 0.811 | int-causal 0.509 | bilin-causal 0.249 | lanc3-causal 0.327 | bilin-oracle 0.316 | lanc3-oracle 0.409 | lanc3-buffered 0.407
+        restore-only 0.965 (err 0.054, noise +1.6 dB, oracle 0.989) | lanc3-causal+restore 0.692 (+7.2 dB) | lanc3-buffered+restore 0.838 (+6.8 dB)
+     MTF@0.45 x_cross: none 0.844 | int-causal 0.569 | bilin-causal 0.329 | lanc3-causal 0.499 | bilin-oracle 0.406 | lanc3-oracle 0.602 | lanc3-buffered 0.595
+        restore-only 0.972 (err 0.046, noise +1.3 dB, oracle 0.992) | lanc3-causal+restore 0.914 (+5.8 dB) | lanc3-buffered+restore 0.951 (+4.3 dB)
+     MTF@0.25 x_cross: none 0.949 | int-causal 0.839 | bilin-causal 0.739 | lanc3-causal 0.974 | bilin-oracle 0.781 | lanc3-oracle 1.014 | lanc3-buffered 1.010
+        restore-only 0.991 (err 0.020, noise +0.4 dB, oracle 0.998) | lanc3-causal+restore 0.992 (+0.2 dB) | lanc3-buffered+restore 0.996 (-0.1 dB)
+        win-rms 0.206 px, causal-pred err 0.222 px, line-centroid resid 0.0110 px, splat noise-var ratio bilin 0.60 lanc3 0.86
+     MTF@0.5 y_along: none 0.758 | int-causal 0.598 | bilin-causal 0.341 | lanc3-causal 0.430 | bilin-oracle 0.388 | lanc3-oracle 0.487 | lanc3-buffered 0.477
+        restore-only 0.949 (err 0.073, noise +2.4 dB, oracle 0.982) | lanc3-causal+restore 0.785 (+6.4 dB) | lanc3-buffered+restore 0.860 (+6.0 dB)
+     MTF@0.45 y_along: none 0.798 | int-causal 0.656 | bilin-causal 0.411 | lanc3-causal 0.573 | bilin-oracle 0.469 | lanc3-oracle 0.659 | lanc3-buffered 0.645
+        restore-only 0.960 (err 0.059, noise +1.9 dB, oracle 0.987) | lanc3-causal+restore 0.929 (+4.8 dB) | lanc3-buffered+restore 0.955 (+3.7 dB)
+     MTF@0.25 y_along: none 0.932 | int-causal 0.877 | bilin-causal 0.766 | lanc3-causal 0.968 | bilin-oracle 0.802 | lanc3-oracle 1.012 | lanc3-buffered 1.007
+        restore-only 0.988 (err 0.023, noise +0.5 dB, oracle 0.997) | lanc3-causal+restore 0.990 (+0.2 dB) | lanc3-buffered+restore 0.995 (-0.1 dB)
+        win-rms 0.239 px, causal-pred err 0.233 px, line-centroid resid 0.0117 px, splat noise-var ratio bilin 0.65 lanc3 0.88
+  seg8/eq      slope=0.978/0.979  20Hz-7kHz: err x=0.0637 y=0.0682 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0198 y=0.0189 (truth 0.235/0.286)  300Hz-3kHz: err x=0.0617 y=0.0665 (truth 0.166/0.178)
+  multi4/raw   slope=0.958/0.956  20Hz-7kHz: err x=0.0586 y=0.0669 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0314 y=0.0375 (truth 0.235/0.286)  300Hz-3kHz: err x=0.0561 y=0.0646 (truth 0.166/0.178)
+
+=== realistic / agri / seed 3: grad median 0.044/px, rms 0.054/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.842/0.814  20Hz-7kHz: err x=0.1129 y=0.1406 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0910 y=0.1258 (truth 0.236/0.290)  300Hz-3kHz: err x=0.1114 y=0.1396 (truth 0.149/0.176)
+     MTF@0.5 x_cross: none 0.824 | int-causal 0.516 | bilin-causal 0.244 | lanc3-causal 0.326 | bilin-oracle 0.308 | lanc3-oracle 0.400 | lanc3-buffered 0.378
+        restore-only 0.939 (err 0.087, noise +1.3 dB, oracle 0.990) | lanc3-causal+restore 0.630 (+6.8 dB) | lanc3-buffered+restore 0.721 (+6.6 dB)
+     MTF@0.45 x_cross: none 0.855 | int-causal 0.563 | bilin-causal 0.313 | lanc3-causal 0.482 | bilin-oracle 0.400 | lanc3-oracle 0.597 | lanc3-buffered 0.562
+        restore-only 0.950 (err 0.073, noise +1.0 dB, oracle 0.992) | lanc3-causal+restore 0.864 (+5.9 dB) | lanc3-buffered+restore 0.905 (+4.6 dB)
+     MTF@0.25 x_cross: none 0.953 | int-causal 0.829 | bilin-causal 0.729 | lanc3-causal 0.969 | bilin-oracle 0.779 | lanc3-oracle 1.014 | lanc3-buffered 0.999
+        restore-only 0.985 (err 0.030, noise +0.3 dB, oracle 0.998) | lanc3-causal+restore 0.983 (+0.1 dB) | lanc3-buffered+restore 0.985 (-0.1 dB)
+        win-rms 0.198 px, causal-pred err 0.228 px, line-centroid resid 0.0150 px, splat noise-var ratio bilin 0.59 lanc3 0.85
+     MTF@0.5 y_along: none 0.770 | int-causal 0.609 | bilin-causal 0.333 | lanc3-causal 0.421 | bilin-oracle 0.400 | lanc3-oracle 0.503 | lanc3-buffered 0.471
+        restore-only 0.902 (err 0.128, noise +1.6 dB, oracle 0.985) | lanc3-causal+restore 0.743 (+6.2 dB) | lanc3-buffered+restore 0.797 (+5.7 dB)
+     MTF@0.45 y_along: none 0.809 | int-causal 0.661 | bilin-causal 0.397 | lanc3-causal 0.554 | bilin-oracle 0.478 | lanc3-oracle 0.667 | lanc3-buffered 0.618
+        restore-only 0.920 (err 0.105, noise +1.3 dB, oracle 0.989) | lanc3-causal+restore 0.882 (+4.8 dB) | lanc3-buffered+restore 0.893 (+3.7 dB)
+     MTF@0.25 y_along: none 0.936 | int-causal 0.875 | bilin-causal 0.757 | lanc3-causal 0.961 | bilin-oracle 0.805 | lanc3-oracle 1.012 | lanc3-buffered 0.987
+        restore-only 0.975 (err 0.037, noise +0.4 dB, oracle 0.997) | lanc3-causal+restore 0.975 (+0.1 dB) | lanc3-buffered+restore 0.976 (-0.1 dB)
+        win-rms 0.231 px, causal-pred err 0.235 px, line-centroid resid 0.0134 px, splat noise-var ratio bilin 0.64 lanc3 0.88
+  rand1/eq     slope=0.971/0.967  20Hz-7kHz: err x=0.0589 y=0.0603 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0279 y=0.0334 (truth 0.236/0.290)  300Hz-3kHz: err x=0.0564 y=0.0578 (truth 0.149/0.176)
+  multi4/eq    slope=0.974/0.967  20Hz-7kHz: err x=0.0557 y=0.0591 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0297 y=0.0357 (truth 0.236/0.290)  300Hz-3kHz: err x=0.0528 y=0.0567 (truth 0.149/0.176)
+     MTF@0.5 x_cross: none 0.824 | int-causal 0.511 | bilin-causal 0.249 | lanc3-causal 0.329 | bilin-oracle 0.308 | lanc3-oracle 0.400 | lanc3-buffered 0.400
+        restore-only 0.974 (err 0.054, noise +1.6 dB, oracle 0.990) | lanc3-causal+restore 0.659 (+7.0 dB) | lanc3-buffered+restore 0.791 (+6.7 dB)
+     MTF@0.45 x_cross: none 0.855 | int-causal 0.567 | bilin-causal 0.325 | lanc3-causal 0.497 | bilin-oracle 0.400 | lanc3-oracle 0.597 | lanc3-buffered 0.592
+        restore-only 0.979 (err 0.046, noise +1.3 dB, oracle 0.992) | lanc3-causal+restore 0.901 (+5.9 dB) | lanc3-buffered+restore 0.951 (+4.5 dB)
+     MTF@0.25 x_cross: none 0.953 | int-causal 0.836 | bilin-causal 0.737 | lanc3-causal 0.975 | bilin-oracle 0.779 | lanc3-oracle 1.014 | lanc3-buffered 1.011
+        restore-only 0.994 (err 0.023, noise +0.4 dB, oracle 0.998) | lanc3-causal+restore 0.994 (+0.2 dB) | lanc3-buffered+restore 0.997 (-0.1 dB)
+        win-rms 0.198 px, causal-pred err 0.216 px, line-centroid resid 0.0134 px, splat noise-var ratio bilin 0.60 lanc3 0.86
+     MTF@0.5 y_along: none 0.770 | int-causal 0.599 | bilin-causal 0.345 | lanc3-causal 0.433 | bilin-oracle 0.400 | lanc3-oracle 0.503 | lanc3-buffered 0.499
+        restore-only 0.957 (err 0.064, noise +2.2 dB, oracle 0.985) | lanc3-causal+restore 0.811 (+6.4 dB) | lanc3-buffered+restore 0.883 (+5.7 dB)
+     MTF@0.45 y_along: none 0.809 | int-causal 0.656 | bilin-causal 0.417 | lanc3-causal 0.582 | bilin-oracle 0.478 | lanc3-oracle 0.667 | lanc3-buffered 0.660
+        restore-only 0.966 (err 0.054, noise +1.7 dB, oracle 0.989) | lanc3-causal+restore 0.940 (+4.7 dB) | lanc3-buffered+restore 0.959 (+3.6 dB)
+     MTF@0.25 y_along: none 0.936 | int-causal 0.876 | bilin-causal 0.771 | lanc3-causal 0.975 | bilin-oracle 0.805 | lanc3-oracle 1.012 | lanc3-buffered 1.008
+        restore-only 0.990 (err 0.023, noise +0.5 dB, oracle 0.997) | lanc3-causal+restore 0.994 (+0.2 dB) | lanc3-buffered+restore 0.996 (-0.1 dB)
+        win-rms 0.231 px, causal-pred err 0.206 px, line-centroid resid 0.0127 px, splat noise-var ratio bilin 0.65 lanc3 0.88
+  seg8/eq      slope=0.985/0.987  20Hz-7kHz: err x=0.0629 y=0.0593 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0201 y=0.0199 (truth 0.236/0.290)  300Hz-3kHz: err x=0.0606 y=0.0570 (truth 0.149/0.176)
+  multi4/raw   slope=0.974/0.967  20Hz-7kHz: err x=0.0557 y=0.0592 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0298 y=0.0357 (truth 0.236/0.290)  300Hz-3kHz: err x=0.0529 y=0.0568 (truth 0.149/0.176)
+
+=== realistic / low / seed 1: grad median 0.015/px, rms 0.018/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.541/0.528  20Hz-7kHz: err x=0.1470 y=0.1770 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1182 y=0.1520 (truth 0.233/0.285)  300Hz-3kHz: err x=0.1422 y=0.1696 (truth 0.160/0.190)
+     MTF@0.5 x_cross: none 0.803 | int-causal 0.516 | bilin-causal 0.178 | lanc3-causal 0.252 | bilin-oracle 0.307 | lanc3-oracle 0.399 | lanc3-buffered 0.301
+        restore-only 0.855 (err 0.178, noise +0.7 dB, oracle 0.988) | lanc3-causal+restore 0.521 (+7.0 dB) | lanc3-buffered+restore 0.626 (+7.2 dB)
+     MTF@0.45 x_cross: none 0.837 | int-causal 0.558 | bilin-causal 0.246 | lanc3-causal 0.413 | bilin-oracle 0.399 | lanc3-oracle 0.597 | lanc3-buffered 0.489
+        restore-only 0.881 (err 0.149, noise +0.5 dB, oracle 0.991) | lanc3-causal+restore 0.818 (+6.5 dB) | lanc3-buffered+restore 0.879 (+5.6 dB)
+     MTF@0.25 x_cross: none 0.946 | int-causal 0.823 | bilin-causal 0.699 | lanc3-causal 0.961 | bilin-oracle 0.779 | lanc3-oracle 1.014 | lanc3-buffered 0.990
+        restore-only 0.962 (err 0.059, noise +0.2 dB, oracle 0.998) | lanc3-causal+restore 0.965 (+0.0 dB) | lanc3-buffered+restore 0.973 (-0.1 dB)
+        win-rms 0.212 px, causal-pred err 0.245 px, line-centroid resid 0.0275 px, splat noise-var ratio bilin 0.55 lanc3 0.83
+     MTF@0.5 y_along: none 0.752 | int-causal 0.578 | bilin-causal 0.301 | lanc3-causal 0.388 | bilin-oracle 0.382 | lanc3-oracle 0.482 | lanc3-buffered 0.408
+        restore-only 0.808 (err 0.239, noise +0.8 dB, oracle 0.982) | lanc3-causal+restore 0.643 (+6.0 dB) | lanc3-buffered+restore 0.691 (+6.2 dB)
+     MTF@0.45 y_along: none 0.793 | int-causal 0.633 | bilin-causal 0.365 | lanc3-causal 0.519 | bilin-oracle 0.463 | lanc3-oracle 0.654 | lanc3-buffered 0.562
+        restore-only 0.841 (err 0.202, noise +0.6 dB, oracle 0.987) | lanc3-causal+restore 0.823 (+5.0 dB) | lanc3-buffered+restore 0.855 (+4.4 dB)
+     MTF@0.25 y_along: none 0.930 | int-causal 0.863 | bilin-causal 0.741 | lanc3-causal 0.949 | bilin-oracle 0.800 | lanc3-oracle 1.012 | lanc3-buffered 0.978
+        restore-only 0.948 (err 0.083, noise +0.2 dB, oracle 0.997) | lanc3-causal+restore 0.955 (+0.1 dB) | lanc3-buffered+restore 0.963 (-0.1 dB)
+        win-rms 0.243 px, causal-pred err 0.252 px, line-centroid resid 0.0400 px, splat noise-var ratio bilin 0.63 lanc3 0.88
+  rand1/eq     slope=0.581/0.572  20Hz-7kHz: err x=0.1261 y=0.1498 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0938 y=0.1216 (truth 0.233/0.285)  300Hz-3kHz: err x=0.1118 y=0.1312 (truth 0.160/0.190)
+  multi4/eq    slope=0.590/0.573  20Hz-7kHz: err x=0.1254 y=0.1509 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0933 y=0.1231 (truth 0.233/0.285)  300Hz-3kHz: err x=0.1166 y=0.1383 (truth 0.160/0.190)
+     MTF@0.5 x_cross: none 0.803 | int-causal 0.503 | bilin-causal 0.178 | lanc3-causal 0.253 | bilin-oracle 0.307 | lanc3-oracle 0.399 | lanc3-buffered 0.312
+        restore-only 0.859 (err 0.181, noise +0.7 dB, oracle 0.988) | lanc3-causal+restore 0.531 (+7.2 dB) | lanc3-buffered+restore 0.654 (+7.2 dB)
+     MTF@0.45 x_cross: none 0.837 | int-causal 0.554 | bilin-causal 0.252 | lanc3-causal 0.423 | bilin-oracle 0.399 | lanc3-oracle 0.597 | lanc3-buffered 0.509
+        restore-only 0.885 (err 0.153, noise +0.6 dB, oracle 0.991) | lanc3-causal+restore 0.844 (+6.5 dB) | lanc3-buffered+restore 0.912 (+5.5 dB)
+     MTF@0.25 x_cross: none 0.946 | int-causal 0.826 | bilin-causal 0.704 | lanc3-causal 0.967 | bilin-oracle 0.779 | lanc3-oracle 1.014 | lanc3-buffered 0.998
+        restore-only 0.963 (err 0.066, noise +0.2 dB, oracle 0.998) | lanc3-causal+restore 0.970 (+0.0 dB) | lanc3-buffered+restore 0.981 (-0.1 dB)
+        win-rms 0.212 px, causal-pred err 0.235 px, line-centroid resid 0.0341 px, splat noise-var ratio bilin 0.55 lanc3 0.83
+     MTF@0.5 y_along: none 0.752 | int-causal 0.579 | bilin-causal 0.301 | lanc3-causal 0.387 | bilin-oracle 0.382 | lanc3-oracle 0.482 | lanc3-buffered 0.417
+        restore-only 0.810 (err 0.245, noise +0.9 dB, oracle 0.982) | lanc3-causal+restore 0.650 (+6.2 dB) | lanc3-buffered+restore 0.714 (+6.2 dB)
+     MTF@0.45 y_along: none 0.793 | int-causal 0.636 | bilin-causal 0.370 | lanc3-causal 0.529 | bilin-oracle 0.463 | lanc3-oracle 0.654 | lanc3-buffered 0.581
+        restore-only 0.843 (err 0.209, noise +0.7 dB, oracle 0.987) | lanc3-causal+restore 0.846 (+5.0 dB) | lanc3-buffered+restore 0.888 (+4.4 dB)
+     MTF@0.25 y_along: none 0.930 | int-causal 0.866 | bilin-causal 0.747 | lanc3-causal 0.958 | bilin-oracle 0.800 | lanc3-oracle 1.012 | lanc3-buffered 0.989
+        restore-only 0.949 (err 0.091, noise +0.2 dB, oracle 0.997) | lanc3-causal+restore 0.963 (+0.1 dB) | lanc3-buffered+restore 0.973 (-0.1 dB)
+        win-rms 0.243 px, causal-pred err 0.238 px, line-centroid resid 0.0479 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  seg8/eq      slope=0.638/0.641  20Hz-7kHz: err x=0.1109 y=0.1259 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0714 y=0.0903 (truth 0.233/0.285)  300Hz-3kHz: err x=0.0954 y=0.1048 (truth 0.160/0.190)
+  multi4/raw   slope=0.587/0.573  20Hz-7kHz: err x=0.1259 y=0.1511 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0941 y=0.1232 (truth 0.233/0.285)  300Hz-3kHz: err x=0.1168 y=0.1384 (truth 0.160/0.190)
+
+=== realistic / low / seed 2: grad median 0.015/px, rms 0.018/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.544/0.584  20Hz-7kHz: err x=0.1462 y=0.1598 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1222 y=0.1411 (truth 0.235/0.290)  300Hz-3kHz: err x=0.1420 y=0.1510 (truth 0.166/0.171)
+     MTF@0.5 x_cross: none 0.810 | int-causal 0.566 | bilin-causal 0.171 | lanc3-causal 0.249 | bilin-oracle 0.298 | lanc3-oracle 0.387 | lanc3-buffered 0.291
+        restore-only 0.859 (err 0.172, noise +0.6 dB, oracle 0.988) | lanc3-causal+restore 0.551 (+7.4 dB) | lanc3-buffered+restore 0.610 (+7.3 dB)
+     MTF@0.45 x_cross: none 0.842 | int-causal 0.609 | bilin-causal 0.238 | lanc3-causal 0.409 | bilin-oracle 0.392 | lanc3-oracle 0.590 | lanc3-buffered 0.483
+        restore-only 0.884 (err 0.145, noise +0.5 dB, oracle 0.991) | lanc3-causal+restore 0.825 (+6.5 dB) | lanc3-buffered+restore 0.879 (+5.6 dB)
+     MTF@0.25 x_cross: none 0.948 | int-causal 0.843 | bilin-causal 0.698 | lanc3-causal 0.966 | bilin-oracle 0.777 | lanc3-oracle 1.015 | lanc3-buffered 0.991
+        restore-only 0.963 (err 0.058, noise +0.1 dB, oracle 0.998) | lanc3-causal+restore 0.966 (+0.0 dB) | lanc3-buffered+restore 0.974 (-0.1 dB)
+        win-rms 0.208 px, causal-pred err 0.240 px, line-centroid resid 0.0275 px, splat noise-var ratio bilin 0.55 lanc3 0.83
+     MTF@0.5 y_along: none 0.774 | int-causal 0.651 | bilin-causal 0.322 | lanc3-causal 0.417 | bilin-oracle 0.409 | lanc3-oracle 0.512 | lanc3-buffered 0.455
+        restore-only 0.826 (err 0.230, noise +0.8 dB, oracle 0.983) | lanc3-causal+restore 0.699 (+6.1 dB) | lanc3-buffered+restore 0.742 (+5.9 dB)
+     MTF@0.45 y_along: none 0.812 | int-causal 0.695 | bilin-causal 0.383 | lanc3-causal 0.546 | bilin-oracle 0.485 | lanc3-oracle 0.673 | lanc3-buffered 0.594
+        restore-only 0.858 (err 0.195, noise +0.7 dB, oracle 0.988) | lanc3-causal+restore 0.847 (+4.8 dB) | lanc3-buffered+restore 0.877 (+4.2 dB)
+     MTF@0.25 y_along: none 0.937 | int-causal 0.886 | bilin-causal 0.752 | lanc3-causal 0.967 | bilin-oracle 0.807 | lanc3-oracle 1.012 | lanc3-buffered 0.983
+        restore-only 0.954 (err 0.084, noise +0.2 dB, oracle 0.997) | lanc3-causal+restore 0.963 (-0.0 dB) | lanc3-buffered+restore 0.969 (-0.1 dB)
+        win-rms 0.229 px, causal-pred err 0.218 px, line-centroid resid 0.0439 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  rand1/eq     slope=0.603/0.609  20Hz-7kHz: err x=0.1199 y=0.1353 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0919 y=0.1149 (truth 0.235/0.290)  300Hz-3kHz: err x=0.1058 y=0.1093 (truth 0.166/0.171)
+  multi4/eq    slope=0.602/0.620  20Hz-7kHz: err x=0.1208 y=0.1350 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0932 y=0.1146 (truth 0.235/0.290)  300Hz-3kHz: err x=0.1129 y=0.1198 (truth 0.166/0.171)
+     MTF@0.5 x_cross: none 0.810 | int-causal 0.541 | bilin-causal 0.172 | lanc3-causal 0.250 | bilin-oracle 0.298 | lanc3-oracle 0.387 | lanc3-buffered 0.304
+        restore-only 0.863 (err 0.177, noise +0.7 dB, oracle 0.988) | lanc3-causal+restore 0.557 (+7.5 dB) | lanc3-buffered+restore 0.642 (+7.3 dB)
+     MTF@0.45 x_cross: none 0.842 | int-causal 0.591 | bilin-causal 0.246 | lanc3-causal 0.422 | bilin-oracle 0.392 | lanc3-oracle 0.590 | lanc3-buffered 0.504
+        restore-only 0.888 (err 0.150, noise +0.5 dB, oracle 0.991) | lanc3-causal+restore 0.851 (+6.5 dB) | lanc3-buffered+restore 0.912 (+5.6 dB)
+     MTF@0.25 x_cross: none 0.948 | int-causal 0.840 | bilin-causal 0.704 | lanc3-causal 0.972 | bilin-oracle 0.777 | lanc3-oracle 1.015 | lanc3-buffered 1.000
+        restore-only 0.964 (err 0.066, noise +0.2 dB, oracle 0.998) | lanc3-causal+restore 0.971 (+0.0 dB) | lanc3-buffered+restore 0.982 (-0.1 dB)
+        win-rms 0.208 px, causal-pred err 0.229 px, line-centroid resid 0.0350 px, splat noise-var ratio bilin 0.55 lanc3 0.83
+     MTF@0.5 y_along: none 0.774 | int-causal 0.657 | bilin-causal 0.324 | lanc3-causal 0.420 | bilin-oracle 0.409 | lanc3-oracle 0.512 | lanc3-buffered 0.460
+        restore-only 0.828 (err 0.242, noise +0.9 dB, oracle 0.983) | lanc3-causal+restore 0.709 (+6.2 dB) | lanc3-buffered+restore 0.765 (+6.0 dB)
+     MTF@0.45 y_along: none 0.812 | int-causal 0.705 | bilin-causal 0.391 | lanc3-causal 0.560 | bilin-oracle 0.485 | lanc3-oracle 0.673 | lanc3-buffered 0.610
+        restore-only 0.859 (err 0.207, noise +0.7 dB, oracle 0.988) | lanc3-causal+restore 0.872 (+4.8 dB) | lanc3-buffered+restore 0.906 (+4.2 dB)
+     MTF@0.25 y_along: none 0.937 | int-causal 0.893 | bilin-causal 0.758 | lanc3-causal 0.975 | bilin-oracle 0.807 | lanc3-oracle 1.012 | lanc3-buffered 0.993
+        restore-only 0.955 (err 0.095, noise +0.2 dB, oracle 0.997) | lanc3-causal+restore 0.971 (-0.0 dB) | lanc3-buffered+restore 0.977 (-0.1 dB)
+        win-rms 0.229 px, causal-pred err 0.205 px, line-centroid resid 0.0536 px, splat noise-var ratio bilin 0.63 lanc3 0.87
+  seg8/eq      slope=0.655/0.653  20Hz-7kHz: err x=0.1053 y=0.1186 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0720 y=0.0938 (truth 0.235/0.290)  300Hz-3kHz: err x=0.0880 y=0.0884 (truth 0.166/0.171)
+  multi4/raw   slope=0.599/0.620  20Hz-7kHz: err x=0.1216 y=0.1353 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0941 y=0.1149 (truth 0.235/0.290)  300Hz-3kHz: err x=0.1137 y=0.1201 (truth 0.166/0.171)
+
+=== realistic / low / seed 3: grad median 0.015/px, rms 0.018/px; jitter >20Hz rms x=0.250 y=0.300 px
+  split/eq     slope=0.589/0.471  20Hz-7kHz: err x=0.1359 y=0.1935 (truth 0.250/0.300)  20Hz-1kHz: err x=0.1137 y=0.1678 (truth 0.237/0.283)  300Hz-3kHz: err x=0.1305 y=0.1878 (truth 0.148/0.208)
+     MTF@0.5 x_cross: none 0.817 | int-causal 0.576 | bilin-causal 0.204 | lanc3-causal 0.290 | bilin-oracle 0.305 | lanc3-oracle 0.395 | lanc3-buffered 0.303
+        restore-only 0.875 (err 0.161, noise +0.7 dB, oracle 0.989) | lanc3-causal+restore 0.605 (+7.2 dB) | lanc3-buffered+restore 0.624 (+7.1 dB)
+     MTF@0.45 x_cross: none 0.849 | int-causal 0.622 | bilin-causal 0.277 | lanc3-causal 0.456 | bilin-oracle 0.397 | lanc3-oracle 0.595 | lanc3-buffered 0.499
+        restore-only 0.897 (err 0.137, noise +0.6 dB, oracle 0.992) | lanc3-causal+restore 0.854 (+6.0 dB) | lanc3-buffered+restore 0.889 (+5.5 dB)
+     MTF@0.25 x_cross: none 0.951 | int-causal 0.856 | bilin-causal 0.716 | lanc3-causal 0.976 | bilin-oracle 0.778 | lanc3-oracle 1.014 | lanc3-buffered 0.995
+        restore-only 0.967 (err 0.059, noise +0.2 dB, oracle 0.998) | lanc3-causal+restore 0.972 (-0.0 dB) | lanc3-buffered+restore 0.978 (-0.1 dB)
+        win-rms 0.203 px, causal-pred err 0.226 px, line-centroid resid 0.0307 px, splat noise-var ratio bilin 0.56 lanc3 0.84
+     MTF@0.5 y_along: none 0.727 | int-causal 0.539 | bilin-causal 0.268 | lanc3-causal 0.349 | bilin-oracle 0.406 | lanc3-oracle 0.506 | lanc3-buffered 0.407
+        restore-only 0.779 (err 0.254, noise +0.8 dB, oracle 0.980) | lanc3-causal+restore 0.597 (+6.5 dB) | lanc3-buffered+restore 0.683 (+6.1 dB)
+     MTF@0.45 y_along: none 0.771 | int-causal 0.586 | bilin-causal 0.326 | lanc3-causal 0.474 | bilin-oracle 0.486 | lanc3-oracle 0.673 | lanc3-buffered 0.554
+        restore-only 0.817 (err 0.214, noise +0.6 dB, oracle 0.985) | lanc3-causal+restore 0.782 (+5.5 dB) | lanc3-buffered+restore 0.840 (+4.4 dB)
+     MTF@0.25 y_along: none 0.922 | int-causal 0.835 | bilin-causal 0.720 | lanc3-causal 0.938 | bilin-oracle 0.808 | lanc3-oracle 1.012 | lanc3-buffered 0.968
+        restore-only 0.940 (err 0.084, noise +0.2 dB, oracle 0.996) | lanc3-causal+restore 0.944 (+0.1 dB) | lanc3-buffered+restore 0.954 (-0.1 dB)
+        win-rms 0.256 px, causal-pred err 0.296 px, line-centroid resid 0.0361 px, splat noise-var ratio bilin 0.61 lanc3 0.86
+  rand1/eq     slope=0.610/0.547  20Hz-7kHz: err x=0.1179 y=0.1566 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0934 y=0.1264 (truth 0.237/0.283)  300Hz-3kHz: err x=0.1002 y=0.1395 (truth 0.148/0.208)
+  multi4/eq    slope=0.627/0.542  20Hz-7kHz: err x=0.1157 y=0.1601 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0910 y=0.1303 (truth 0.237/0.283)  300Hz-3kHz: err x=0.1061 y=0.1496 (truth 0.148/0.208)
+     MTF@0.5 x_cross: none 0.817 | int-causal 0.569 | bilin-causal 0.203 | lanc3-causal 0.289 | bilin-oracle 0.305 | lanc3-oracle 0.395 | lanc3-buffered 0.314
+        restore-only 0.877 (err 0.168, noise +0.7 dB, oracle 0.989) | lanc3-causal+restore 0.615 (+7.2 dB) | lanc3-buffered+restore 0.655 (+7.2 dB)
+     MTF@0.45 x_cross: none 0.849 | int-causal 0.619 | bilin-causal 0.280 | lanc3-causal 0.464 | bilin-oracle 0.397 | lanc3-oracle 0.595 | lanc3-buffered 0.516
+        restore-only 0.900 (err 0.144, noise +0.6 dB, oracle 0.992) | lanc3-causal+restore 0.876 (+6.0 dB) | lanc3-buffered+restore 0.919 (+5.5 dB)
+     MTF@0.25 x_cross: none 0.951 | int-causal 0.856 | bilin-causal 0.719 | lanc3-causal 0.981 | bilin-oracle 0.778 | lanc3-oracle 1.014 | lanc3-buffered 1.002
+        restore-only 0.968 (err 0.066, noise +0.2 dB, oracle 0.998) | lanc3-causal+restore 0.977 (-0.0 dB) | lanc3-buffered+restore 0.984 (-0.1 dB)
+        win-rms 0.203 px, causal-pred err 0.216 px, line-centroid resid 0.0365 px, splat noise-var ratio bilin 0.56 lanc3 0.84
+     MTF@0.5 y_along: none 0.727 | int-causal 0.546 | bilin-causal 0.274 | lanc3-causal 0.355 | bilin-oracle 0.406 | lanc3-oracle 0.506 | lanc3-buffered 0.431
+        restore-only 0.787 (err 0.252, noise +0.9 dB, oracle 0.980) | lanc3-causal+restore 0.619 (+6.6 dB) | lanc3-buffered+restore 0.737 (+6.2 dB)
+     MTF@0.45 y_along: none 0.771 | int-causal 0.603 | bilin-causal 0.343 | lanc3-causal 0.500 | bilin-oracle 0.486 | lanc3-oracle 0.673 | lanc3-buffered 0.588
+        restore-only 0.824 (err 0.214, noise +0.7 dB, oracle 0.985) | lanc3-causal+restore 0.832 (+5.4 dB) | lanc3-buffered+restore 0.891 (+4.3 dB)
+     MTF@0.25 y_along: none 0.922 | int-causal 0.851 | bilin-causal 0.733 | lanc3-causal 0.951 | bilin-oracle 0.808 | lanc3-oracle 1.012 | lanc3-buffered 0.984
+        restore-only 0.942 (err 0.090, noise +0.2 dB, oracle 0.996) | lanc3-causal+restore 0.957 (+0.1 dB) | lanc3-buffered+restore 0.969 (-0.1 dB)
+        win-rms 0.256 px, causal-pred err 0.274 px, line-centroid resid 0.0451 px, splat noise-var ratio bilin 0.62 lanc3 0.87
+  seg8/eq      slope=0.655/0.626  20Hz-7kHz: err x=0.1053 y=0.1314 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0765 y=0.0926 (truth 0.237/0.283)  300Hz-3kHz: err x=0.0829 y=0.1117 (truth 0.148/0.208)
+  multi4/raw   slope=0.625/0.541  20Hz-7kHz: err x=0.1163 y=0.1605 (truth 0.250/0.300)  20Hz-1kHz: err x=0.0918 y=0.1307 (truth 0.237/0.283)  300Hz-3kHz: err x=0.1066 y=0.1499 (truth 0.148/0.208)
+
+=== tonal-large / urban / seed 1: grad median 0.084/px, rms 0.111/px; jitter >20Hz rms x=0.521 y=0.797 px
+  split/eq     slope=1.051/1.049  20Hz-7kHz: err x=0.1197 y=0.1837 (truth 0.521/0.797)  20Hz-1kHz: err x=0.1065 y=0.1548 (truth 0.515/0.792)  300Hz-3kHz: err x=0.1093 y=0.1688 (truth 0.153/0.195)
+     MTF@0.5 x_cross: none 0.701 | int-causal 0.636 | bilin-causal 0.399 | lanc3-causal 0.493 | bilin-oracle 0.463 | lanc3-oracle 0.569 | lanc3-buffered 0.534
+        restore-only 0.954 (err 0.199, noise +3.7 dB, oracle 0.966) | lanc3-causal+restore 0.850 (+5.8 dB) | lanc3-buffered+restore 0.874 (+5.2 dB)
+     MTF@0.45 x_cross: none 0.749 | int-causal 0.687 | bilin-causal 0.464 | lanc3-causal 0.620 | bilin-oracle 0.532 | lanc3-oracle 0.714 | lanc3-buffered 0.675
+        restore-only 0.975 (err 0.160, noise +3.1 dB, oracle 0.978) | lanc3-causal+restore 0.927 (+4.1 dB) | lanc3-buffered+restore 0.924 (+3.1 dB)
+     MTF@0.25 x_cross: none 0.914 | int-causal 0.887 | bilin-causal 0.784 | lanc3-causal 0.966 | bilin-oracle 0.823 | lanc3-oracle 1.010 | lanc3-buffered 0.995
+        restore-only 0.996 (err 0.072, noise +0.8 dB, oracle 0.996) | lanc3-causal+restore 0.986 (+0.2 dB) | lanc3-buffered+restore 0.982 (-0.1 dB)
+        win-rms 0.270 px, causal-pred err 0.229 px, line-centroid resid 0.0435 px, splat noise-var ratio bilin 0.68 lanc3 0.90
+     MTF@0.5 y_along: none 0.490 | int-causal 0.507 | bilin-causal 0.301 | lanc3-causal 0.378 | bilin-oracle 0.406 | lanc3-oracle 0.506 | lanc3-buffered 0.429
+        restore-only 0.767 (err 0.404, noise +5.8 dB, oracle 0.830) | lanc3-causal+restore 0.742 (+6.7 dB) | lanc3-buffered+restore 0.776 (+6.0 dB)
+     MTF@0.45 y_along: none 0.541 | int-causal 0.570 | bilin-causal 0.377 | lanc3-causal 0.528 | bilin-oracle 0.486 | lanc3-oracle 0.674 | lanc3-buffered 0.588
+        restore-only 0.824 (err 0.353, noise +5.5 dB, oracle 0.869) | lanc3-causal+restore 0.896 (+5.2 dB) | lanc3-buffered+restore 0.855 (+3.6 dB)
+     MTF@0.25 y_along: none 0.811 | int-causal 0.840 | bilin-causal 0.750 | lanc3-causal 0.946 | bilin-oracle 0.809 | lanc3-oracle 1.012 | lanc3-buffered 0.975
+        restore-only 0.998 (err 0.109, noise +2.4 dB, oracle 0.987) | lanc3-causal+restore 0.983 (+0.4 dB) | lanc3-buffered+restore 0.960 (-0.1 dB)
+        win-rms 0.414 px, causal-pred err 0.271 px, line-centroid resid 0.0556 px, splat noise-var ratio bilin 0.65 lanc3 0.89
+  rand1/eq     slope=1.094/1.087  20Hz-7kHz: err x=0.0642 y=0.1030 (truth 0.521/0.797)  20Hz-1kHz: err x=0.0560 y=0.0813 (truth 0.515/0.792)  300Hz-3kHz: err x=0.0334 y=0.0601 (truth 0.153/0.195)
+  multi4/eq    slope=1.075/1.067  20Hz-7kHz: err x=0.0518 y=0.0845 (truth 0.521/0.797)  20Hz-1kHz: err x=0.0454 y=0.0654 (truth 0.515/0.792)  300Hz-3kHz: err x=0.0269 y=0.0516 (truth 0.153/0.195)
+     MTF@0.5 x_cross: none 0.701 | int-causal 0.633 | bilin-causal 0.403 | lanc3-causal 0.500 | bilin-oracle 0.463 | lanc3-oracle 0.569 | lanc3-buffered 0.550
+        restore-only 0.990 (err 0.160, noise +3.9 dB, oracle 0.966) | lanc3-causal+restore 0.892 (+5.9 dB) | lanc3-buffered+restore 0.934 (+5.3 dB)
+     MTF@0.45 x_cross: none 0.749 | int-causal 0.687 | bilin-causal 0.470 | lanc3-causal 0.634 | bilin-oracle 0.532 | lanc3-oracle 0.714 | lanc3-buffered 0.699
+        restore-only 1.002 (err 0.129, noise +3.2 dB, oracle 0.978) | lanc3-causal+restore 0.961 (+4.1 dB) | lanc3-buffered+restore 0.970 (+3.1 dB)
+     MTF@0.25 x_cross: none 0.914 | int-causal 0.890 | bilin-causal 0.789 | lanc3-causal 0.974 | bilin-oracle 0.823 | lanc3-oracle 1.010 | lanc3-buffered 1.009
+        restore-only 1.004 (err 0.062, noise +0.9 dB, oracle 0.996) | lanc3-causal+restore 0.997 (+0.2 dB) | lanc3-buffered+restore 0.997 (-0.1 dB)
+        win-rms 0.270 px, causal-pred err 0.213 px, line-centroid resid 0.0385 px, splat noise-var ratio bilin 0.68 lanc3 0.90
+     MTF@0.5 y_along: none 0.490 | int-causal 0.538 | bilin-causal 0.328 | lanc3-causal 0.409 | bilin-oracle 0.406 | lanc3-oracle 0.506 | lanc3-buffered 0.493
+        restore-only 0.817 (err 0.349, noise +6.0 dB, oracle 0.830) | lanc3-causal+restore 0.812 (+6.7 dB) | lanc3-buffered+restore 0.899 (+5.7 dB)
+     MTF@0.45 y_along: none 0.541 | int-causal 0.604 | bilin-causal 0.406 | lanc3-causal 0.567 | bilin-oracle 0.486 | lanc3-oracle 0.674 | lanc3-buffered 0.660
+        restore-only 0.866 (err 0.306, noise +5.7 dB, oracle 0.869) | lanc3-causal+restore 0.941 (+4.9 dB) | lanc3-buffered+restore 0.948 (+3.3 dB)
+     MTF@0.25 y_along: none 0.811 | int-causal 0.857 | bilin-causal 0.766 | lanc3-causal 0.964 | bilin-oracle 0.809 | lanc3-oracle 1.012 | lanc3-buffered 1.006
+        restore-only 1.007 (err 0.087, noise +2.4 dB, oracle 0.987) | lanc3-causal+restore 0.995 (+0.3 dB) | lanc3-buffered+restore 0.992 (-0.1 dB)
+        win-rms 0.414 px, causal-pred err 0.239 px, line-centroid resid 0.0495 px, splat noise-var ratio bilin 0.66 lanc3 0.89
+  seg8/eq      slope=1.073/1.065  20Hz-7kHz: err x=0.0633 y=0.1088 (truth 0.521/0.797)  20Hz-1kHz: err x=0.0454 y=0.0624 (truth 0.515/0.792)  300Hz-3kHz: err x=0.0452 y=0.0865 (truth 0.153/0.195)
+  multi4/raw   slope=1.074/1.066  20Hz-7kHz: err x=0.0517 y=0.0845 (truth 0.521/0.797)  20Hz-1kHz: err x=0.0453 y=0.0652 (truth 0.515/0.792)  300Hz-3kHz: err x=0.0270 y=0.0519 (truth 0.153/0.195)
